@@ -22,4 +22,4 @@ def project0cli() -> None:
     if len(argv) == 2:
         print(compute(argv[1]))
     else:
-        print("usage: project0cli str")
+        print("usage: project0 str")
