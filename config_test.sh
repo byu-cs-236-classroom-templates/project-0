@@ -22,3 +22,5 @@ elif [ $arg -eq "100" ]; then
 else
     exit 1
 fi
+
+pip install ".[classroom]"
