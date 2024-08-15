@@ -1,6 +1,6 @@
 name: Classroom Autograding
 'on':
-- pull_request
+- push
 - workflow_dispatch
 - repository_dispatch
 permissions:
