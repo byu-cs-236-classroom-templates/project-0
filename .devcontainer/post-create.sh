@@ -1,5 +1,6 @@
 #!/bin/sh
 
+containerWorkspaceFolder=/workspaces/project-0
 git config --global --add safe.directory ${containerWorkspaceFolder}
 
 # Upgrade pip
