@@ -27,7 +27,7 @@ jobs:
         test-name: Bucket 80
         timeout: 10
         max-score: 80
-        setup-command: "sh config_test.sh 80; pip install \".[classroom]\""
+        setup-command: "sh config_test.sh 80"
     - name: Bucket 100
       id: bucket-100
       uses: classroom-resources/autograding-python-grader@v1
@@ -35,7 +35,7 @@ jobs:
         test-name: bucket-100
         timeout: 10
         max-score: 20
-        setup-command: "sh config_test.sh 100; pip install \".[classroom]\""
+        setup-command: "sh config_test.sh 100"
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
