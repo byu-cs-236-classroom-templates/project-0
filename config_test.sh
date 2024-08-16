@@ -5,17 +5,5 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-arg="$1"
-mv "test/test_project0.py" "test/.test_project0.py"
-mv "test/test_passoff_80.py" "test/.test_passoff_80.py"
-mv "test/test_passoff_100.py" "test/.test_passoff_100.py"
-
-if [ $arg -eq "80" ]; then
-    mv "test/.test_passoff_80.py" "test/test_passoff_80.py"
-elif [ $arg -eq "100" ]; then
-    mv "test/.test_passoff_100.py" "test/test_passoff_100.py"
-else
-    exit 1
-fi
-
+printf "[pytest]\npython_files = *$1*" > pytest.ini
 pip install ".[classroom]"

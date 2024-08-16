@@ -88,9 +88,7 @@ The best way do developed is with tests. Writing a test helps figure out the inp
 
 TDD makes programming such a nicer experience because it signals when the program is done, and it signals when the program is not working. It also provides immediate access to the debugger with failing input using the testing pane in vscode. Learning to write tests first and then code is an important part of the course.  It is also key to completing the programming projects in a timely manner. Write test. See test fail. Write code. Tackle one small part of the program at a time with each part starting with a test.
 
-All the tests written as part of developement belong in `test/test_project0.py`. These can be logically grouped using classes -- create a class with `Test` as a prefix, and then create functions in the class also prefixed by `test`.
-
-**Caution: creating new Python files in the test folder with tests in those files likely will break the autograding for GitHub Classroom.**
+Tests written as part of developement belong in `test/test_project0.py`. These can be logically grouped using classes -- create a class with `Test` as a prefix, and then create functions in the class also prefixed by `test`.
 
 ## Project Pass-off
 
