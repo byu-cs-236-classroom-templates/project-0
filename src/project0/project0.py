@@ -6,18 +6,21 @@
 
 # If you haven't seen this syntax before, the ": str" and "-> str" are type annotations for Python.
 # They just give you a clue into what type the input variable should be and the return type of the
-# function respectivly. It is good practice to label your functions like this unless you need the type
+# function respectively. It is good practice to label your functions like this unless you need the type
 # to be variable.
 
 from sys import argv
 
 
-# FIXME: This code should return "Hello World" plus whatever the value of "input" is.
+# TODO: This code should return "Hello World" plus whatever the value of "input" is.
 def compute(input: str) -> str:
     # YOUR CODE GOES HERE
     raise NotImplementedError
 
 
+# This function is the entry point for our package. It is the function that runs
+# for the `project0` command in the integrated terminal. Try it in the terminal!
+# It is configured in the `pyproject.toml` file in the `scripts` section.
 def project0cli() -> None:
     if len(argv) == 2:
         print(compute(argv[1]))

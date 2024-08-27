@@ -3,7 +3,7 @@ import pytest
 from project0.project0 import compute
 
 
-def test_given_badinput_when_project0_then_except():
+def test_given_bad_input_when_project0_then_except():
     # givin
     input = 10
 
@@ -15,8 +15,11 @@ def test_given_badinput_when_project0_then_except():
     pass
 
 
-@pytest.mark.parametrize("input", ["who", "do", "you"])
-def test_given_goodinput_when_project0_then_match_pattern(input: str):
+@pytest.mark.parametrize(
+    "input, expected",
+    [("who", "Hello World who"), ("do", "Hello World do"), ("you", "Hello World you")],
+)
+def test_given_good_input_when_project0_then_match_pattern(input: str, expected: str):
     # given
     pass
 
@@ -24,5 +27,4 @@ def test_given_goodinput_when_project0_then_match_pattern(input: str):
     answer = compute(input)
 
     # then
-    expected = "Hello World " + input
     assert expected == answer
