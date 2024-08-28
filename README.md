@@ -40,6 +40,10 @@ Writing Python in vscode is really nice using a few extensions. Install each of 
 
 The easiest way to see if the extensions are installed in vscode is by clicking in the left menubar the icon with three blocks forming an "L" shape and the fourth block hovering diagonally. Hovering the mouse over it will pop up the "Extensions" tool-tip. Once clicked, it shows the installed extensions.
 
+<p align="center">
+<img src="./images/extensions.jpg" alt="drawing" width="800"/>
+</p>
+
 ### Cloning the Repository
 
 [GitHub Classroom](https://classroom.github.com) creates a repository for code when the _project 0_ assignment is accepted. Its time to use `git` to bring that code to the system being used to code a solution. The [git tutorial](https://git-scm.com/docs/gittutorial) is a good starting point for learning `git` but not required for the course. Working knowledge of the following `git` commands is required though: `git clone`, `git status`, `git add`, `git commit`, and `git push`. Other helpful commands include: `git branch`, `git checkout`, and `git merge`. Learn about these online or from `git` directly using the `--help` flag. For example, in the vscode integrated terminal, try `git clone --help`. Here it described what the command does and what the various options are for the command.
@@ -63,7 +67,13 @@ There should be a new directory created. In the above example, the directory is 
 
 ### Setting up the Project
 
-This section assumes the root directory of the project is the one opened in vscode. Each project in the course is a Python package organized with a _src_ layout. All that means is that the project is a Python package with its source in `src/project0` and its tests in `test`. Clicking the explorer icon on the left menu bar -- the two stacked documents icon -- toggles the explorer view on and off and shows these folders along with other files for the package configuration.  The package itself, with its dependencies, are defined in `./pyproject.toml`. This project file should not need to be edited except to add new package dependencies -- adding a dependency for this project or others is very unlikely to be needed. Other files that come with the project will be explained along the way.
+This section assumes the root directory of the project is the one opened in vscode. Each project in the course is a Python package organized with a _src_ layout. All that means is that the project is a Python package with its source in `src/project0` and its tests in `test`. Clicking the explorer icon on the left menu bar -- the two stacked documents icon -- toggles the explorer view on and off and shows these folders along with other files for the package configuration. The screen shot shows the explorer view. The icon is the top one with the blue bar next to it to indicate that it is the active view.
+
+<p align="center">
+<img src="./images/explorer.jpg" alt="drawing" width="800"/>
+</p>
+
+The package itself, with its dependencies, are defined in `./pyproject.toml`. This project file should not need to be edited except to add new package dependencies -- adding a dependency for this project or others is very unlikely to be needed. Other files that come with the project will be explained along the way.
 
 Development takes place in a [Python virtual environment](https://docs.python.org/3/library/venv.html). The only supported virtual environment is venv. A virtual environment isolates this project from anything else installed on a system so that there are no conflicts between system level and package level dependencies. The instructions to setup a venv and install the project dependencies are below (see [vscode python tutorial](https://code.visualstudio.com/docs/languages/python) for more on virtual environments).
 
@@ -100,12 +110,18 @@ Type errors are not uncommon in Python. A type error is where the code gets an u
 
 Mypy is able to infer many types, but it does require annotations on function signatures and variable assignments when it is not able to infer the type in the assignment. The package dependencies include the `mypy` executable, so it can be run on the command line: `mypy --strict <file>`. The `--strict` flag is how it is configured in the project. The [Microsoft Mypy Type Checker](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker) extension (in the recommended list so it is already installed) will flag Mypy errors in red in the editor and offer suggestions. Pre-commit can be run anytime as well to check the annotations (or lack thereof).
 
-Class lectures and TA help sessions will teach more about using type annotations and `mypy`, but try the following example to get started. Use the vscode Explorer to open `/src/project0/project0.py`. The explorer is found on the left menu bar and is the top icon that looks like a stack of documents. Clicking it toggles the Explorer open and closed. Navigate to the directory and click the `project0.py` file. That opens it in a editor tab. **Pro hints**
+Class lectures and TA help sessions will teach more about using type annotations and `mypy`, but try the following example to get started. Use the vscode Explorer to open `/src/project0/project0.py`. by navigating to the directory and clicking the `project0.py` file. That opens it in a editor tab. **Pro hints**
 
   * Double click a file in Explorer to pin the tab so opening another file doesn't just replace this one -- pinned tabs show the file in regular rather than italicized font.
   * Files can be opened from the integrated terminal with the `code` command: `code src/project0/project0.py`. Try it!!
 
-In the file on line 18, change `raise NotImplementedError` to `return 10` and save the file. First, the 10 should be underlined in a red squiggle. Hovering the mouse over the squiggle gives the type error and the same message is in the _"PROBLEMS"_ pain in the bottom window where the terminal is located. Click on the terminal pane and try running `mypy`: `mypy --strict src/project0/project0.py`
+In the file on line 18, change `raise NotImplementedError` to `return 10` and save the file. First, the 10 should be underlined in a red squiggle. Hovering the mouse over the squiggle gives the type error and the same message is in the _"PROBLEMS"_ pain in the bottom window where the terminal is located.
+
+<p align="center">
+<img src="./images/problems.jpg" alt="drawing" width="800"/>
+</p>
+
+Click on the terminal pane and try running `mypy`: `mypy --strict src/project0/project0.py`
 
 ```
 $ mypy --strict src/project0/project0.py
@@ -193,7 +209,15 @@ File checks for commits may seem like an extra unnecessary step but studies have
 
 The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the the root folder type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
 
+<p align="center">
+<img src="./images/beaker.jpg" alt="drawing" width="800"/>
+</p>
+
 Click the beaker to open the testing pane. Click the _Configure Python Tests_ button. Choose the `pytest` framework. Choose the `./test` folder. Pytest will discover all tests in the `./test` folder and show them in the testing pane. From here, hovering over a test will present the play or debug options for the test. Double clicking the test will open the source file for the test.
+
+<p align="center">
+<img src="./images/debug.jpg" alt="drawing" width="800"/>
+</p>
 
 Individual tests can be run from the integrated terminal. `pytest --collect-only` gives the list of known tests. Here is an example of running a specific test in this project:
 
@@ -235,6 +259,10 @@ Every project has a minimum bucket in order for the code to be _functional enoug
 ## Project Submission
 
 Projects are submitted by pushing a commit to the `master` branch of the repository. **Warning**: be sure to add any new files that are part of the submission. Use `git status` and `git add` to add all files to the commit. Commit with  `git commit`. Here these commands happen in the vscode integrated terminal, but can also be done using the _"Source Control"_ view for vscode. Access _"Source Control"_ by clicking the graph icon just below the magnifying glass in the left pane. Whether by command line or _"Source Control"_ view, it is the same. The below assumes command line in an integrated terminal.
+
+<p align="center">
+<img src="./images/source-control.jpg" alt="drawing" width="800"/>
+</p>
 
 The `git commit` opens an editor in vscode for the commit message. Please follow [these guidelines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) for the message. The first line is a summary that should be under 72 characters. It should start with an imperative "Add", "Update", "Remove", "Refactor", etc. followed by the description. For example, "Add solution to project 0". After the summary, a more detailed description should follow.
 
