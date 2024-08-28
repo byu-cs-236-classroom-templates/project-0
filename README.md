@@ -203,7 +203,11 @@ Tabs remover.............................................................Passed
 The `ruff` tool, which is the linter that checks for code smells, throws an error because the newly added import is not used. To fix the error, the import must be used or removed. It must be manually corrected and the file saved after the changes. The other message comes from the `ruff-format` tool that enforces Python formatting standards. Here the tool automatically reformatted the file -- it will be different in the editor.
 
 The command `pre-commit run` runs the checks on any files added to the commit (e.g., anything for which `git add` has been done), but as shown above, the `--all-files` checks every file in the package.
-File checks for commits may seem like an extra unnecessary step but studies have shown that these checks improve code quality and reduce defect rates. More critically, it makes it so all files have consistent formatting -- an important aspect of any serious software project.=
+File checks for commits may seem like an extra unnecessary step but studies have shown that these checks improve code quality and reduce defect rates. More critically, it makes it so all files have consistent formatting -- an important aspect of any serious software project. Here is a screen shot with it in the integrated terminal.
+
+<p align="center">
+<img src="./images/pre-commit.jpg" alt="drawing" width="800"/>
+</p>
 
 ## Testing
 
