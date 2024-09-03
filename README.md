@@ -278,4 +278,4 @@ A push on the `master` branch will kickoff the auto-grader on GitHub Classroom. 
 
 ## What's next?
 
-Open the `./test/project0.py` folder, read the comments, and start working on a solution! Remember, the goal of this project is to become familiar with vscode, the integrated terminal, `git`, `mypy`, `pre-commit`, `pytest`, project pass-off, and project submission. Only spend enough time on it to be comfortable with the tools and process.
+Open the `./src/project0/project0.py` folder, read the comments, and start working on a solution! Remember, the goal of this project is to become familiar with vscode, the integrated terminal, `git`, `mypy`, `pre-commit`, `pytest`, project pass-off, and project submission. Only spend enough time on it to be comfortable with the tools and process.
