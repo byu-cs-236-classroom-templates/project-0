@@ -88,7 +88,9 @@ In the integrated terminal, do the following:
 
   1. Create a virtual environment
       * In the root directory: `python3 -m venv .venv`
-      * Activate the virtual environment: `source .venv/bin/activate`
+  2. Activate the virtual environment in the terminal. **Warning**: alway be in the virtual environment when using the integrated terminal using one of the below two methods.
+      * Usually, vscode will pop up a window saying, _"We noticed a new virtual environment was created. Do you want to select it for the workspace folder?"_. This windows appears if the virtual environment is created in the integrated terminal. The answer is "Yes." Answering "Yes" means that when you create a new terminal, in opens it in the virtual environment. You can tell because there will be a `(.venv)` preceding the prompt as in `(.venv) x@who:project-0-x$`. Exit the current terminal (`exit`) and have vscode open a new one. The `(.venv)` should be there.
+      * The other way to activate the virtual environment is with `source .venv/bin/activate`.
   1. Install the package, with `dev` dependencies, in editable mode: `pip install --editable ".[dev]"`.
       * Only if above fails with missing packages:
           * `pip install --upgrade setuptools`
