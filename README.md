@@ -13,7 +13,7 @@ $ python --version
 Python 3.12.3
 ```
 
-Versions 3.9 or greater should be fine for this course. Be sure Python is installed on the system before moving to the next section.
+Versions 3.11 or greater should be fine for this course. Be sure Python is installed on the system before moving to the next section.
 
 ## Git
 
@@ -90,13 +90,23 @@ In the integrated terminal, do the following:
       * In the root directory: `python3 -m venv .venv`
   2. Activate the virtual environment in the terminal. **Warning**: alway be in the virtual environment when using the integrated terminal using one of the below two methods.
       * Usually, vscode will pop up a window saying, _"We noticed a new virtual environment was created. Do you want to select it for the workspace folder?"_. This windows appears if the virtual environment is created in the integrated terminal. The answer is "Yes." Answering "Yes" means that when you create a new terminal, in opens it in the virtual environment. You can tell because there will be a `(.venv)` preceding the prompt as in `(.venv) x@who:project-0-x$`. Exit the current terminal (`exit`) and have vscode open a new one. The `(.venv)` should be there.
-      * The other way to activate the virtual environment is with `source .venv/bin/activate`.
+      * The other way to activate the virtual environment is with `source .venv/bin/activate` --- **see the Windows equivalent below**
   1. Install the package, with `dev` dependencies, in editable mode: `pip install --editable ".[dev]"`.
       * Only if above fails with missing packages:
           * `pip install --upgrade setuptools`
           * `pip install --upgrade build`
           * `pip install --editable ".[dev]"`
   1. Enable `pre-commit`: `pre-commit install` -- more to come on `pre-commit`.
+
+#### Windows venv Activation
+
+Try to activate the virtual environment: `./.venv/Scripts/activate`
+
+If this throws an exception along the lines of _"Scripts cannot be run on this computer, check execution policy"_ -- that is not the exact error but captures the gist of it -- then run Powershell as an administrator and execute: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
+
+Go back to VS Code, refresh the window (by typing `Ctrl-P`, searching for `>window` in the search bar that comes up and selecting `Developer: Reload Window` from the auto-completed list of options. Or alternatively, close your terminal window with the `X` and reopen the integrated terminal.
+
+In a refreshed window with new permissions, `./.venv/Scripts/activate` should work!
 
 The project is now fully configured and everything is ready for development. The command `project0` on the terminal should print usage information (see `./pyproject.toml` under `scripts` to discover the entry point in the package for `project0`).
 
