@@ -18,6 +18,7 @@ def test_given_bad_input_when_project0_then_except():
 @pytest.mark.parametrize(
     "input, expected",
     [("who", "Hello World who"), ("do", "Hello World do"), ("you", "Hello World you")],
+    ids=["who", "do", "you"],
 )
 def test_given_good_input_when_project0_then_match_pattern(input: str, expected: str):
     # given
