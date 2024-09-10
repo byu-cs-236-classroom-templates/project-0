@@ -221,6 +221,10 @@ File checks for commits may seem like an extra unnecessary step but studies have
 <img src="./images/pre-commit.jpg" alt="drawing" width="800"/>
 </p>
 
+### Windows Path Length
+
+Windows by default limits the path lengths to 256 characters, and that limit can interfere with `pre-commit`. The issue can be hard to diagnose because it shows up as a _"file not found"_ error during `pre-commit` when running the `ruff` hooks. If you see it, then you can go to the registry editor application, navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem` and change the value of `LongPathsEnabled` from `0` to `1`. This change should resolve any issues with long paths to the files.
+
 ## Testing
 
 The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the the root folder type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
@@ -287,6 +291,28 @@ After the commit completes, `git push` will submit. Multiple submissions are all
 A push on the `master` branch will kickoff the auto-grader on GitHub Classroom. In the classroom interface students can confirm their score (its the same tests run for pass-off) and inspect failing tests etc. **Heads up**: it takes several minutes for the auto-grader to run and the score to appear in [GitHub Classroom](https://classroom.github.com).
 
 **Final step for submission**: the submission is **not complete** until the URL for the GitHub repository is submitted on [Leaning Suite](https://learningsuite.byu.edu/). Goto to [Leaning Suite](https://learningsuite.byu.edu/), goto _"Assignments"_, and under _"Projects"_ choose _"Project 0 -- VSCode, Python, GitHub tutorials"_. This link should be a quiz with two questions: _What is the URL for your github repository?_ and _What is your GitHub user ID?_. These two items are used for grading. Grading involves scoring according to the pass-off tests and reviewing key parts of the solution for feedback.
+
+### Checking your Score on GitHub
+
+The score for the project is computed as explained in **Project Pass-off** and what is reported by running the pass-off tests should be the same as what is reported by the auto-grader provided by GitHub Classroom. It is possible to confirm the auto-grade score through GitHub. Auto-grading takes time, so don't try to check the score to quickly after the `git push` on the `master`.
+
+The auto-grading runs as a GitHub Action that is triggered whenever there is a commit added to the `master` branch. To see the auto-grading results, follow the submitted URL to repository on GitHub. It should look something like the below that shows the top portion of what would be in the browser window. Notice that in the bottom center of the image there is a green checkmark. The green checkmark indicates that __all pass-off tests passed_.  If any pass-off test failed, then there will be a red _x_ rather than the green checkmark.
+
+<p align="center">
+<img src="./images/github-workflow-mark.jpg" alt="drawing" width="800"/>
+</p>
+
+Click the green checkmark (or red x), and it should pull up a window like that below. Notice the _Details_ link on the right side of the image. Click that link to follow it to the summary page for the auto-grading.
+
+<p align="center">
+<img src="./images/github-workflow-popup.jpg" alt="drawing" width="800"/>
+</p>
+
+The new window should look something like the below. Only the _Autograding Reporter_ is not expanded. The window shows each step in the GitHub Action to do the auto grading. Notice that there is a step for each of the buckets. These steps can be expanded to see exactly which tests passed or failed in any given bucket. It effectively summarizes the `pytest` results for each bucket. The _Autograding Reporter_ stage gathers up the results from each bucket and computes a final score. It also shows which tests passed, or failed, it each bucket.
+
+<p align="center">
+<img src="./images/github-workflow-autograde-report.jpg" alt="drawing" width="800"/>
+</p>
 
 ## What's next?
 
