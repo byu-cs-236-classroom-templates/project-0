@@ -225,6 +225,10 @@ File checks for commits may seem like an extra unnecessary step but studies have
 
 Windows by default limits the path lengths to 256 characters, and that limit can interfere with `pre-commit`. The issue can be hard to diagnose because it shows up as a _"file not found"_ error during `pre-commit` when running the `ruff` hooks. If you see it, then you can go to the registry editor application, navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem` and change the value of `LongPathsEnabled` from `0` to `1`. This change should resolve any issues with long paths to the files.
 
+### Failures with no Message
+
+If `pre-commit` is not behaving as expected, for example, `ruff` giving error code `-11` then try `pre-commit clean` and remove the `.ruff_cache` from the project folder. The `clean` command removes the `pre-commit` cache.
+
 ## Testing
 
 The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the the root folder type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
