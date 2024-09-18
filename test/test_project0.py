@@ -1,3 +1,4 @@
+# type: ignore
 import pytest
 
 from project0.project0 import compute

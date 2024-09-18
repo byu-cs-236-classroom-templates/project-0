@@ -1,3 +1,4 @@
+# type: ignore
 import os
 import typing
 from project0.project0 import compute
