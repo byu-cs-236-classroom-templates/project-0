@@ -46,6 +46,10 @@ The easiest way to see if the extensions are installed in vscode is by clicking 
 
 ### Cloning the Repository
 
+#### Windows
+
+Take a moment to enable `autocrlf` for Windows: `git config --global core.autocrlf true` The command avoids confusion about how end of lines are encoded. Ask Co-pilot for an explanation.
+
 [GitHub Classroom](https://classroom.github.com) creates a repository for code when the _project 0_ assignment is accepted. Its time to use `git` to bring that code to the system being used to code a solution. The [git tutorial](https://git-scm.com/docs/gittutorial) is a good starting point for learning `git` but not required for the course. Working knowledge of the following `git` commands is required though: `git clone`, `git status`, `git add`, `git commit`, and `git push`. Other helpful commands include: `git branch`, `git checkout`, and `git merge`. Learn about these online or from `git` directly using the `--help` flag. For example, in the vscode integrated terminal, try `git clone --help`. Here it described what the command does and what the various options are for the command.
 
 For this step of the project, all that is needed in to _clone_ the repository created by GitHub Classroom when the assignment was accepted. Goto [GitHub Classroom](https://classroom.github.com) and log into the system. Navigate to the "Project 0" and click the _"Repository"_ link. The link should go to the repository on GitHub. Click the green _"Code"_ button and copy the _HTTPS_ URL to the clipboard.
