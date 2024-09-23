@@ -91,7 +91,7 @@ README.md  config_test.sh  pyproject.toml  src  test
 In the integrated terminal, do the following:
 
   1. Create a virtual environment
-      * In the root directory: `python3 -m venv .venv`
+      * In the project root directory: `python3 -m venv .venv`
   2. Activate the virtual environment in the terminal. **Warning**: alway be in the virtual environment when using the integrated terminal using one of the below two methods.
       * Usually, vscode will pop up a window saying, _"We noticed a new virtual environment was created. Do you want to select it for the workspace folder?"_. This windows appears if the virtual environment is created in the integrated terminal. The answer is "Yes." Answering "Yes" means that when you create a new terminal, in opens it in the virtual environment. You can tell because there will be a `(.venv)` preceding the prompt as in `(.venv) x@who:project-0-x$`. Exit the current terminal (`exit`) and have vscode open a new one. The `(.venv)` should be there.
       * The other way to activate the virtual environment is with `source .venv/bin/activate` --- **see the Windows equivalent below**
@@ -235,7 +235,7 @@ If `pre-commit` is not behaving as expected, for example, `ruff` giving error co
 
 ## Testing
 
-The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the the root folder type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
+The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the project root directory type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
 
 <p align="center">
 <img src="./images/beaker.jpg" alt="drawing" width="800"/>
