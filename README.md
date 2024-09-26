@@ -118,6 +118,13 @@ The project is installed by `pip` in the venv in _edit mode_. Edit mode means th
 
 Be sure that the virtual environment is activated whenever working in the project from the terminal. In the integrated vscode terminal, there is a `.venv` preceding the terminal prompt. If that is not there, then activate the virtual environment from the project root directory: `source .venv/bin/activate`. To deactivate the virtual environment: `deactivate`.
 
+### WARNING
+
+  * Be sure that the `conda` environment is not active when setting up the project. It's active when there is a `(base)` annotation next to the terminal prompt. The `conda deactivate` command will exit that environment.
+  * Be sure the Python version is at least 3.11 -- `python --version`.
+  * Open the project folder in vscode when working on the project, and not a folder above it or below it, otherwise the paths for the pass-off tests will not work -- the common error is _"no project2 module found"_.
+  * Be sure that vscode is using the virtual environment in the project folder: choose `Python Select Interpreter` from the command pallette and select the Python in the `.venv` folder -- its usually the first option if vscode opened that folder as the workspace.
+
 ## Type Annotations and Mypy
 
 Type errors are not uncommon in Python. A type error is where the code gets an unexpected and incompatible type for the given statement or expression. For example, returning a `str` from a function that should return an `int` is a type error, as is assigning an `int` to a `str`.  Type error defects are easy to create in Python code and always seem to manifest at the absolute worst times.
