@@ -16,16 +16,18 @@ project0 = "project0.project0:project0cli"
 
 [project.optional-dependencies]
 dev = [
-  "pytest>=8.2.0",
+  "pytest",
   "mypy",
+  "ruff",
   "pre-commit",
 ]
 
 classroom = [
-  "pytest>=8.3.1",
+  "pytest",
 ]
 
 [tool.ruff]
+lint.extend-select = ["I"]
 target-version = "py312"
 
 [tool.nitpick]

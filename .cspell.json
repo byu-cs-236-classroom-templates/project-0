@@ -1,0 +1,6 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": ["post-create.sh", "devcontainer.json", ".pre-commit-config.yaml", "pyrightconfig.json"],
+  "words": []
+}
