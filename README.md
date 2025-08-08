@@ -1,334 +1,523 @@
-## Visual Studio Code
+# CS 236 Project 0: VS Code Setup & Git Basics
 
-The only supported _integrated development environment_ (IDE) is [Visual Studio Code](https://code.visualstudio.com) (vscode). [Download and install vscode](https://code.visualstudio.com/download) if it is not already installed on the system being used. The easiest way to see if it is installed is by using the search tool for the system. Search for _"Visual Studio Code"_.
+## 🚀 0. Create a Base Folder
+1. On your machine, create a folder named `CS236`.
+2. All CS 236 starter repos (Project 0, 1, 2, …) will be cloned into `CS236/` to keep your work organized.
 
-Most (all) of the instructions for the projects assume some knowledge of working on the command line in a terminal. The preferred terminal in the vscode integrated terminal. This brief review of [terminal basics in vscode](https://code.visualstudio.com/docs/terminal/basics) is a helpful review. For this project being able to open an integrated terminal is most important and is fortunately the very first part of [terminal basics in vscode](https://code.visualstudio.com/docs/terminal/basics).
+If you don't know for sure how to create this folder, ask your favorite AI tool for help. You'll need to tell the AI tool whether your computer is a mac or a PC.
 
-## Python
+---
 
-CS 236 uses [Python](https://www.python.org) for all programming projects, and it must be installed on the system being used. Please follow the instructions at the  [Python Downloads](https://www.python.org/downloads/) page to install the latest version on the system being used if it is not already there. The easiest way to see if Python is installed, and what version, is to open a vscode integrated terminal, and at the command prompt, type `python --version` followed by enter:
+## 🖥️ 1. Install & Configure Visual Studio Code (VSCode)
+You will use Visual Studio Code as the Integrated Development Environment (IDE) for this class. This section describes how to install and configure VSCode so that it will run Python and the tools you will need in this and subsequent projects.
 
-```
-$ python --version
-Python 3.12.3
-```
+1. **Download & install** VSCode by following the instructions from:
+   https://code.visualstudio.com/
 
-Versions 3.11 or greater should be fine for this course. Be sure Python is installed on the system before moving to the next section.
+2. **Launch VSCode**
 
-## Git
+3. **Open the Extensions panel in VSCode**:
+   - Windows/Linux: `Ctrl+Shift+X`
+   - macOS: `⌘+Shift+X`
+   - Or click the stacked block icon  <img src="images/extensions_panel.png" alt="Extensions Panel" width="18" /> in the Activity Bar
 
-The programming projects all rely on [GitHub Classroom](https://classroom.github.com) and [Git](https://git-scm.com). [Git](https://git-scm.com) must be installed on the system to complete the lab. Please follow the instructions an [Git Downloads](https://git-scm.com/downloads) to install the latest version of Git on the system if it is not already there. The easiest way to see if Git is installed, and what version, is to open again a vscode integrated terminal, and at the command prompt, type `git --version` followed by enter:
+3. **Search for** and **install**:
+   - **Python** (by Microsoft)
+   - **Python Debugger** (by Microsoft)
+   - **MyPy Type Checker** (by Microsoft)
+   - **Pylance** (by Microsoft)
+   - **Jupyter** (by Microsoft)
+   - **Ruff** (by Astral Software)
+   - **GitHub Actions** (by GitHub, optional, for managing Git workflows)
 
-```
-$ git --version
-git version 2.45.0
-```
+---
 
-Any recent version of Git should be fine for the course.
+## 📥 2. Clone the Starter Repository
+We've created a set of files that you will use for the rest of this project. The files are stored in a _git repository_. This section explains how you copy the files from where we've placed them to your local machine. A subsequent section explains how you upload your files to `git` so that they will be saved in the cloud and so that your code can be automatically graded.
 
-## Developer Setup
+1. Open the **Source Control** panel in VSCode:
+   - Windows/Linux: `Ctrl+Shift+G`
+   - macOS: `⌘+Shift+G`
+   - Or click the source control icon <img src="images/source_control_icon.png" alt="Source Control" width="18" /> in the atvity bar
 
-Follow these steps, in order, to complete the project.
+2. Click **Clone Repository**, paste your repo URL, and choose `CS236/` as the destination.
 
-### Visual Studio Code Extensions
+3. When prompted, click **Open** to load the project in VS Code.
 
-Writing Python in vscode is really nice using a few extensions. Install each of the extensions below by clicking the hyperlink and then choosing _"Install"_.
+The next section describes the folders that you have copied (or _cloned_) to your machine.
 
-  * [Microsoft Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python): intellisense (i.e., code completion) and debugger.
-  * [Microsoft Mypy Type Checker](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker): type checking for Python. The course will teach how it is used.
-  * [Astral Software Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff): linting and formatting. A linter checks for _code smells_ while the formatter enforces Python standards for indents and spaces.
+---
 
-The easiest way to see if the extensions are installed in vscode is by clicking in the left menubar the icon with three blocks forming an "L" shape and the fourth block hovering diagonally. Hovering the mouse over it will pop up the "Extensions" tool-tip. Once clicked, it shows the installed extensions.
+## 📁 3. Explore Project Structure
 
-<p align="center">
-<img src="./images/extensions.jpg" alt="drawing" width="800"/>
-</p>
-
-### Cloning the Repository
-
-#### Windows
-
-Take a moment to enable `autocrlf` for Windows: `git config --global core.autocrlf true` The command avoids confusion about how end of lines are encoded. Ask Co-pilot for an explanation.
-
-[GitHub Classroom](https://classroom.github.com) creates a repository for code when the _project 0_ assignment is accepted. Its time to use `git` to bring that code to the system being used to code a solution. The [git tutorial](https://git-scm.com/docs/gittutorial) is a good starting point for learning `git` but not required for the course. Working knowledge of the following `git` commands is required though: `git clone`, `git status`, `git add`, `git commit`, and `git push`. Other helpful commands include: `git branch`, `git checkout`, and `git merge`. Learn about these online or from `git` directly using the `--help` flag. For example, in the vscode integrated terminal, try `git clone --help`. Here it described what the command does and what the various options are for the command.
-
-For this step of the project, all that is needed in to _clone_ the repository created by GitHub Classroom when the assignment was accepted. Goto [GitHub Classroom](https://classroom.github.com) and log into the system. Navigate to the "Project 0" and click the _"Repository"_ link. The link should go to the repository on GitHub. Click the green _"Code"_ button and copy the _HTTPS_ URL to the clipboard.
-
-In a vscode integrated terminal, navigate to the directory where you want the code to live (see the `cd` command for help or open the directory first in vscode and then start an integrated terminal), and do the following: `git clone <URL>` where the _URL_ is one copied from GitHub. It should look something like this
+The root folder is the `CS236` directory you created earlier. Inside that folder is another folder named something like `project0`. The precise name might vary, but you'll see the name `project0` somewhere in the name. Inside the `project0` are a handful of other files and folders. The general structure is given by
 
 ```
-$ git clone https://github.com/byu-cs-236-classroom-preview/project-0-smith.git
-Cloning into 'project-0-smith'...
-remote: Enumerating objects: 55, done.
-remote: Counting objects: 100% (55/55), done.
-remote: Compressing objects: 100% (34/34), done.
-remote: Total 55 (delta 7), reused 41 (delta 5), pack-reused 0 (from 0)
-Receiving objects: 100% (55/55), 15.14 KiB | 2.52 MiB/s, done.
-Resolving deltas: 100% (7/7), done.
+CS236
+└── project0/
+    ├── README.md
+    ├── pyproject.toml
+    ├── images/
+    ├── src/
+    │   └── project0
+    └── tests/
 ```
 
-There should be a new directory created. In the above example, the directory is `project-0-smith`. That directory is where the code for the project lives. Open that directory in vscode. It is the **root** directory for the project.
+The key files and folders are:
 
-### Setting up the Project
+- **README.md** – this tutorial
+- **pyproject.toml** – configuration file that defines project metadata (name, version, dependencies) and CLI entrypoint; CLI stands for Command-Line Interface, letting you run `project0` as a script.
+- **images/** - images used in this tutorial
+- **src/** - source directory containing Python files used in the `project0` package.  The module `project0.py` is found in this `src\project0` directory folder. We'll look at the other files in the `src\project0` folder later.
+- **tests/** –  directory reserved for futureprojects where you'll use unit tests to verify your code automatically. One goal of CS 236 is to use unit tests to help you connect the mathematical ideas taught in the class with useful coding patterns and practices.
 
-This section assumes the root directory of the project is the one opened in vscode. Each project in the course is a Python package organized with a _src_ layout. All that means is that the project is a Python package with its source in `src/project0` and its tests in `test`. Clicking the explorer icon on the left menu bar -- the two stacked documents icon -- toggles the explorer view on and off and shows these folders along with other files for the package configuration. The screen shot shows the explorer view. The icon is the top one with the blue bar next to it to indicate that it is the active view.
+### Confirm that you have the correct files
+There are two ways to check whether you have the correct files: using the integrated terminal and using the _explorer_ in VSCode.
 
-<p align="center">
-<img src="./images/explorer.jpg" alt="drawing" width="800"/>
-</p>
+**Using the Integrated Terminal in VSCode.** Open the integrated terminal and list the files. Make sure that you see `images`, `pyproject.toml`, `README.md`, `src`, and `tests`.
 
-The package itself, with its dependencies, are defined in `./pyproject.toml`. This project file should not need to be edited except to add new package dependencies -- adding a dependency for this project or others is very unlikely to be needed. Other files that come with the project will be explained along the way.
+**Using Explorer in VSCode.**
+Click the explorer icon  <img src="images/explorer_icon.png" alt="Explorer Icon" width="18" /> in the Activity Bar. This will open a window on the left side of VSCode. The window should show all the files listed above and a few others that we aren't using right now.
 
-Development takes place in a [Python virtual environment](https://docs.python.org/3/library/venv.html). The only supported virtual environment is venv. A virtual environment isolates this project from anything else installed on a system so that there are no conflicts between system level and package level dependencies. The instructions to setup a venv and install the project dependencies are below (see [vscode python tutorial](https://code.visualstudio.com/docs/languages/python) for more on virtual environments).
+## 🧪 4. Set up your Python Environment with `venv`
 
-Assuming the root directory of the project is open in vscode, the instructions require a terminal in that directory. We will us the integrated terminal in vscode. To get an integrated terminal, on the vscode menu choose _"View"_ and then _"Terminal"_. This menu option should open a window on the bottom of vscode that is an integrated terminal. That terminal should be sitting at the root directory of the project -- type `ls` followed by enter. It should look like the below:
+A _virtual environment_ is a lightweight, local Python environment used to isolate project-specific packages from the default Python settings on your computer. Using a virtual environment prevents dependency conflicts and ensures that your installed tools (like  `mypy`, `ruff`, or `pytest`, which we'll use in subsequent projects) behave consistently across machines. The name of the virtual environment we will use is `venv`.
 
-```
-$ ls
-README.md  config_test.sh  pyproject.toml  src  test
-```
+### 4.1 Deactivate Conda (if active)
 
-In the integrated terminal, do the following:
+We've learned that some prior classes have you install and automatically load an environment called `conda` so that the tools in those classes work. `conda` doesn't work well with `venv` so you have to make sure that conda is deactivated if you’re using a computer that automatically loads a conda environment (e.g. from Anaconda). You deactivate `conda` by doing the following steps:
 
-  1. Create a virtual environment
-      * In the project root directory: `python3 -m venv .venv`
-  2. Activate the virtual environment in the terminal. **Warning**: alway be in the virtual environment when using the integrated terminal using one of the below two methods.
-      * Usually, vscode will pop up a window saying, _"We noticed a new virtual environment was created. Do you want to select it for the workspace folder?"_. This windows appears if the virtual environment is created in the integrated terminal. The answer is "Yes." Answering "Yes" means that when you create a new terminal, in opens it in the virtual environment. You can tell because there will be a `(.venv)` preceding the prompt as in `(.venv) x@who:project-0-x$`. Exit the current terminal (`exit`) and have vscode open a new one. The `(.venv)` should be there.
-      * The other way to activate the virtual environment is with `source .venv/bin/activate` --- **see the Windows equivalent below**
-  1. Install the package, with `dev` dependencies, in editable mode: `pip install --editable ".[dev]"`.
-      * Only if above fails with missing packages:
-          * `pip install --upgrade setuptools`
-          * `pip install --upgrade build`
-          * `pip install --editable ".[dev]"`
-  1. Enable `pre-commit`: `pre-commit install` -- more to come on `pre-commit`.
+- Open the Integrated Terminal inside VSCode
+  - **Menu**: _View → Terminal_
+  - **Shortcut**:
+    - Windows/Linux: ``Ctrl+` ``
+    - macOS: ``⌃` ``
+- Look to see if you have a conda environment enstalled. Look at the line before the prompt in the terminal. If it starts with `(base)` or has some other environment indicator in parentheses `(myenv)`, then you need to do the next step.
+- Deactive conda by typing
 
-#### Windows venv Activation
-
-Try to activate the virtual environment: `./.venv/Scripts/activate`
-
-If this throws an exception along the lines of _"Scripts cannot be run on this computer, check execution policy"_ -- that is not the exact error but captures the gist of it -- then run Powershell as an administrator and execute: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
-
-Go back to VS Code, refresh the window (by typing `Ctrl-P`, searching for `>window` in the search bar that comes up and selecting `Developer: Reload Window` from the auto-completed list of options. Or alternatively, close your terminal window with the `X` and reopen the integrated terminal.
-
-In a refreshed window with new permissions, `./.venv/Scripts/activate` should work!
-
-The project is now fully configured and everything is ready for development. The command `project0` on the terminal should print usage information (see `./pyproject.toml` under `scripts` to discover the entry point in the package for `project0`).
-
-The project is installed by `pip` in the venv in _edit mode_. Edit mode means that `pip` is using the actual project files.  To uninstall the package from the venv, use the command `pip uninstall project0` -- should never need to uninstall for this course.
-
-Be sure that the virtual environment is activated whenever working in the project from the terminal. In the integrated vscode terminal, there is a `.venv` preceding the terminal prompt. If that is not there, then activate the virtual environment from the project root directory: `source .venv/bin/activate`. To deactivate the virtual environment: `deactivate`.
-
-### WARNING
-
-  * Be sure that the `conda` environment is not active when setting up the project. It's active when there is a `(base)` annotation next to the terminal prompt. The `conda deactivate` command will exit that environment.
-  * Be sure the Python version is at least 3.11 -- `python --version`.
-  * Open the project folder in vscode when working on the project, and not a folder above it or below it, otherwise the paths for the pass-off tests will not work -- the common error is _"no project2 module found"_.
-  * Be sure that vscode is using the virtual environment in the project folder: choose `Python Select Interpreter` from the command pallette and select the Python in the `.venv` folder -- its usually the first option if vscode opened that folder as the workspace.
-
-## Type Annotations and Mypy
-
-Type errors are not uncommon in Python. A type error is where the code gets an unexpected and incompatible type for the given statement or expression. For example, returning a `str` from a function that should return an `int` is a type error, as is assigning an `int` to a `str`.  Type error defects are easy to create in Python code and always seem to manifest at the absolute worst times.
-
-[Mypy](https://mypy-lang.org) checks for type errors in all the Python files in the `src` directory and any Python file or directory with Python files that does not start with `test`. It relies on [type annotations](https://mypy.readthedocs.io/en/stable/builtin_types.html) in the Python code for the checks. On the surface, type annotations in Python appear to undermine some of Python's niceness, but the annotations greatly aid with maintaining, or working with, Python code.
-
-Mypy is able to infer many types, but it does require annotations on function signatures and variable assignments when it is not able to infer the type in the assignment. The package dependencies include the `mypy` executable, so it can be run on the command line: `mypy --strict <file>`. The `--strict` flag is how it is configured in the project. The [Microsoft Mypy Type Checker](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker) extension (in the recommended list so it is already installed) will flag Mypy errors in red in the editor and offer suggestions. Pre-commit can be run anytime as well to check the annotations (or lack thereof).
-
-Class lectures and TA help sessions will teach more about using type annotations and `mypy`, but try the following example to get started. Use the vscode Explorer to open `/src/project0/project0.py`. by navigating to the directory and clicking the `project0.py` file. That opens it in a editor tab. **Pro hints**
-
-  * Double click a file in Explorer to pin the tab so opening another file doesn't just replace this one -- pinned tabs show the file in regular rather than italicized font.
-  * Files can be opened from the integrated terminal with the `code` command: `code src/project0/project0.py`. Try it!!
-
-In the file on line 18, change `raise NotImplementedError` to `return 10` and save the file. First, the 10 should be underlined in a red squiggle. Hovering the mouse over the squiggle gives the type error and the same message is in the _"PROBLEMS"_ pain in the bottom window where the terminal is located.
-
-<p align="center">
-<img src="./images/problems.jpg" alt="drawing" width="800"/>
-</p>
-
-Click on the terminal pane and try running `mypy`: `mypy --strict src/project0/project0.py`
-
-```
-$ mypy --strict src/project0/project0.py
-src/project0/project0.py:18: error: Incompatible return value type (got "int", expected "str")  [return-value]
-Found 1 error in 1 file (checked 1 source file)
+```bash
+conda deactivate
 ```
 
-Here `mypy` give the line number for the type error with an explanation. Adding and checking type annotations results in fewer defects and more readable Python code. It is required in this course.
+You'll know you've been successful if the `(base)` part of the prompt will have disappeared.
 
-## Pre-commit
+### 4.2 Create a Virtual Environment
+You now have to create the virtual environment so that all the code you execute inside of VSCode uses that environment. Make sure you are in your `CS236/` directory. What you type next depends on what type of computer you are using and how it is configured. Usually, PCs install the latest version of Python so that you can execute it by typing `python`. Macs usually ship with an old version of python and the command `python` points to that old version. To overcome this, you run python by typing `python3`. Thus,
 
-The `mypy` type checker is one of several useful tools to help write better Python code in this course. The `pre-commit` tool is another. The `pre-commit` tool runs when `git` is used to `commit` a new code revision. The `git commit` command is discussed later. The `pre-commit` tool is discussed here because it is so useful that is is nice to be able to run it not just with `git commit` but while developing code in general.
-
-[Pre-commit](https://pre-commit.com) is a tool to check files and automatically runs **before** committing them to the Git repository. When it runs as part of `git commit` then every file that is part of the commit are run through a series of code checks. If all the files that are part of the commit pass the checks, then the commit goes through. If any file fails any check, then the issues are reported on the terminal and the commit is rejected. The files need to be updated to resolve the issues and re-added to the commit in order for the commit to go through. What is nice about `pre-commit` is that it can be run at anytime to check files and not just with `git commit`.
-
-The checks performed by pre-commit are defined in `./.pre-commit-config.yaml` and summarized here:
-
-  * Remove trailing whitespace on any line
-  * Force files to end on a newline
-  * Format check yaml files
-  * Prevent large files from being added
-  * Static check Python files for code smells (linting)
-  * Reformat Python files to PEP standards
-  * Type check Python files
-  * Convert everything to Unix line encodings
-  * Replace tabs with spaces
-
-Formatting related checks that fail are automatically fixed, but the failures still abort the commit. Any updated file needs to be re-added to the commit and the commit needs to be run again. Linter and type check errors must be manually corrected. Details for each failure are reported in the terminal.
-
-To see pre-commit in action, open `src/project0/project0.py` and remove all the new lines between the functions `project0` and `project0cli` and add `from typing import Tuple` to the imports. The code in the file should look like this
-
+If on a PC then you should type
+```bash
+python -m venv .venv
 ```
-from sys import argv
-from typing import Tuple
+and if on a Mac or a computer configured to use Linux then you should type
+```bash
+python3 -m venv .venv
+```
+This creates a hidden directory called `.venv` in your project folder containing a standalone Python environment.
 
-# FIXME: This code should return "Hello World" plus whatever the value of "input" is.
+You can check to see if you are successful by typing in the command that lists all files in the current folder. If you don't knw how to do this on your machine, ask your favorite AI agent.
+
+On a Mac or (most) Linux-based machine, you must type
+```bash
+ls -al
+```
+from the prompt. The command `ls` lists all the files in the current folder except for those that start with a period. Adding the `-al` next to the `ls` command lists all the files in the current folder including those that start with a period.
+
+When you list all the files in your folder then you should see a folder named `.venv` in the list of things that appear.
+
+### 4.3 Activate the Virtual Environment
+You now have to tell VSCode that you want to use the virtual environment. This is called _activating_ the environment. How you activate `venv` depends on your machine.
+
+For a Windows machine running PowerShell,
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+and on a Mac or Linux-based machine
+```bash
+source .venv/bin/activate
+```
+If you are having trouble activating the virtual environment, ask an AI agent how to tell machine you are working on and ask for help.
+
+You'll know that you've been successful if the name of the prompt changes and starts with `(.venv)`.
+
+---
+
+---
+## 📦 5. Python Modules, Packages, and Installation
+
+In this step, you’ll learn:
+
+- The difference between Python modules and packages
+- How Python project structure affects imports
+- How to install your own project as a package
+- How command-line interfaces (CLIs) are connected to the configuration file called `pyproject.toml`
+
+---
+
+### 5.1 🔍 Python Modules vs. Packages
+
+Python projects are made up of **modules** and **packages**. Understanding the distinction will help you understand how the starter code for subsequent projects is organized. That understanding will help you oranize and import your files correctly.
+
+#### 🧱 Module
+
+- A **module** is a single `.py` file.
+- It can contain functions, variables, classes, and runnable code.
+
+Example. Suppose we have a file `project0.py` that contains only the definition of a function called `compute`:
+```python
+# src/project0.py
 def compute(input: str) -> str:
-    # YOUR CODE GOES HERE
-    raise NotImplementedError
-def project0cli() -> None:
-    if len(argv) == 2:
-        print(compute(argv[1]))
-    else:
-        print("usage: project0 str")
+    return "Hello " + input
 ```
 
-In the integrated terminal, do the following command: `pre-commit run --all-files`. The output should look something like this
+We can import a module in Python using the following command, which is placed at the top of a file.
 
+```python
+import project0       # if project0.py is in your Python path
 ```
-trim trailing whitespace.................................................Failed
-- hook id: trailing-whitespace
-- exit code: 1
-- files were modified by this hook
-
-Fixing README.md
-
-fix end of files.........................................................Passed
-check yaml...............................................................Passed
-check for added large files..............................................Passed
-ruff.....................................................................Failed
-- hook id: ruff
-- exit code: 1
-
-src/project0/project0.py:13:20: F401 [*] `typing.Tuple` imported but unused
-Found 1 error.
-[*] 1 fixable with the `--fix` option.
-
-ruff-format..............................................................Failed
-- hook id: ruff-format
-- files were modified by this hook
-
-1 file reformatted, 5 files left unchanged
-
-mypy.....................................................................Passed
-CRLF end-lines remover...................................................Passed
-Tabs remover.............................................................Passed
+This command imports a _module object_, which is a special type of object. We can access the member functions of this object using the dot notation, just like is done with other objects. If we wanted to access the function `compute` that is defined in `project0.py` we'd type
+```python
+project0.compute("input to function")
+```
+We can also just import the function from the module by inserting the following command in a python file:
+```python
+from project0 import compute
+```
+We can then directly execute the function without using the dot notation,
+```python
+compute("input to function")
 ```
 
-The `ruff` tool, which is the linter that checks for code smells, throws an error because the newly added import is not used. To fix the error, the import must be used or removed. It must be manually corrected and the file saved after the changes. The other message comes from the `ruff-format` tool that enforces Python formatting standards. Here the tool automatically reformatted the file -- it will be different in the editor.
 
-The command `pre-commit run` runs the checks on any files added to the commit (e.g., anything for which `git add` has been done), but as shown above, the `--all-files` checks every file in the package.
-File checks for commits may seem like an extra unnecessary step but studies have shown that these checks improve code quality and reduce defect rates. More critically, it makes it so all files have consistent formatting -- an important aspect of any serious software project. Here is a screen shot with it in the integrated terminal.
+#### 📁 Package
 
-<p align="center">
-<img src="./images/pre-commit.jpg" alt="drawing" width="800"/>
-</p>
+- A **package** is a folder that contains a special file called `__init__.py`.
+- It may also contain multiple `.py` files or even sub-packages.
+Notice that a _module is a single file_ and a _package is a folder_ that contains at least the file `__init__.py` and can contain other files.
 
-### Windows Path Length
+Example structure:
+```
+project0/              ← package directory
+├── __init__.py        ← marks this as a package
+└── project0.py        ← a module inside the package
+```
 
-Windows by default limits the path lengths to 256 characters, and that limit can interfere with `pre-commit`. The issue can be hard to diagnose because it shows up as a _"file not found"_ error during `pre-commit` when running the `ruff` hooks. If you see it, then you can go to the registry editor application, navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem` and change the value of `LongPathsEnabled` from `0` to `1`. This change should resolve any issues with long paths to the files.
+Importing from a package:
+```python
+from project0.project0 import compute
+```
 
-### Failures with no Message
+In the statement
+```python
+from project0.project0
+```
+the  _project0._ (note the trailing period) indicates that the package is saved in the `project0` directory, and the _project0_ after the period indicates that we're importing from the file `project0.py`.
 
-If `pre-commit` is not behaving as expected, for example, `ruff` giving error code `-11` then try `pre-commit clean` and remove the `.ruff_cache` from the project folder. The `clean` command removes the `pre-commit` cache.
 
-## Testing
+💡 This project and the starter code for future projects all use `src/` as the root directory for code. This class will always configure Python to look for packages there. The file `pyproject.toml` configures Python to look in the `src/` directory. The next section says a little more about what else is done by the file `pyproject.toml`.
 
-The only supported testing framework is [Pytest](https://pypi.org/project/pytest/). To run all tests, in the integrated terminal from the project root directory type `pytest` followed by enter. All tests should fail. Vscode is configured by the Python extensions to integrate testing into its interface. That interface is the _test beaker_ in the left menu bar.
+### 5.2 🧠 When to Use a Module vs. a Package
 
-<p align="center">
-<img src="./images/beaker.jpg" alt="drawing" width="800"/>
-</p>
+✅ Use a **module** when:
+- You’re working on a small, focused piece of functionality
+- All your code fits comfortably in one file
+- You don’t need to split the logic across multiple files
+- Examples:
+    - math_utils.py with a few math helper functions
+    - cli_tool.py for a short script with a command-line interface
+- Benefits:
+    - Simple to write and import
+    - Great for scripts, utilities, and small tools
 
-Click the beaker to open the testing pane. Click the _Configure Python Tests_ button. Choose the `pytest` framework. Choose the `./test` folder. Pytest will discover all tests in the `./test` folder and show them in the testing pane. From here, hovering over a test will present the play or debug options for the test. Double clicking the test will open the source file for the test.
+✅ Use a **package** when:
+- Your project grows beyond a single file
+- You want to organize related modules into a namespace (folder)
+- You have multiple concerns (e.g., CLI, logic, tests, helpers)
+- You want to expose a public API while hiding internal structure
+- Benefits:
+    - Easier to manage larger codebases
+    - Encourages modular design
+    - Keeps related functionality grouped
 
-<p align="center">
-<img src="./images/debug.jpg" alt="drawing" width="800"/>
-</p>
+For example, suppose we have several files that can be used together but which are best organized into different logical units. Call the package `myproject` by creating a folder with that name and then save the files into that folder, yielding.
 
-Individual tests can be run from the integrated terminal. `pytest --collect-only` gives the list of known tests. Here is an example of running a specific test in this project:
+```
+myproject/
+├── __init__.py
+├── compute.py
+├── parser.py
+└── cli.py
+```
 
- ```
- pytest -vv -s ./test/test_project0.py::test_given_good_input_when_project0_then_match_pattern[who]
- ```
+You can then import different functions from the different modules using, for example,
+```python
+from myproject.compute import calculate
+from myproject.cli import main
+```
 
-Try it out!
+---
 
-  * the `-vv` is verbose output
-  * the `-s` includes any `print` output in the report
-  * the `./test/test_project0.py` names the file where the test function is found
-  * the `::test_given_good_input_when_project0_then_match_pattern` names the function in the file
-  * the `[who]` names the parameter to use for the test input.
+## 🛠️ 6. What is a CLI?
 
-The function in the example uses [@pytest.mark.parameterize](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to list several inputs for the test to use. Parameterization is a great way to give the same test code several different inputs, and students are encouraged to use parameterization when writing tests.
+A **CLI**, or **Command-Line Interface**, lets users interact with a program by typing commands into a terminal.
 
-The `pytest` tool discovers test by searching for anything prefixed by `test` or `Test`. To write a test, write a function with the `test` prefix in its name and add an `assert` to that function. If the `assert` holds, then the test passes. If the `assert` fails, then the test fails.
+In previous classes, you ran a Python script either by clicking buttons on a graphicla interface or by typing something like this from the command line
+```bash
+python3 myfile.py
+```
+This command says to run `python3` and have it execute the code in `myfile.py`. This required that the `myfile.py` had a function called `main`.
 
-## Test Driven Development
+A command-line interface allows the a program to be run directly as a command without typing `python3`. In the case of this project, you'd run
 
-The best way do developed is with tests. Writing a test helps figure out the input, the computation, and the expected output. It also helps break seemingly overwhelming programming tasks into small manageable pieces defined by tests. _Test driven development_ (TDD) is the process of first writing a test for a new behavior in the code, running the test to see it fail (for whatever reason including missing definitions), and then writing code to make the test pass.
+```bash
+project0 hello
+```
+#### 📁 Step-by-Step: How This Project Sets Up a CLI
 
-TDD makes programming a nicer experience because it signals when the program is done, and it signals when the program is not working. It also provides immediate access to the debugger with failing input using the testing pane in vscode. Learning to write tests first and then code is an important part of the course.  It is also key to completing the programming projects in a timely manner. Write a test. See the test fail. Write the code. See the test pass. TDD helps tackle one small part of the program at a time with each part starting with a test.
+   1.   Your code is in a function named project0cli() in src/project0/project0.py
 
-Tests written as part of development belong in `test/test_project0.py` or other appropriately named Python files in the `test` folder. These can be logically grouped using classes -- create a class with `Test` as a prefix, and then create functions in the class also prefixed by `test`. Open the `/src/test/test_project0.py` folder. Here there are two types of tests. The `test_given_bad_input_when_project0_then_except` defines what should happen on bad input. The ` with pytest.raises(TypeError):` on line 11 tells `pytest` that the function should raise a `TypeError` if it is working correctly. Run the test in the testing view or in the integrated terminal with `pytest -vv -s ./test/test_project0.py::test_given_bad_input_when_project0_then_except` to see the failed test report.
+   2.   The `pyproject.toml` file contains:
 
-The second type of test defines what the function should do on good input as defined by the `test_given_good_input_when_project0_then_match_pattern` function. It uses `assert` to check that the `expected` string is the `answer`. It uses `pytest.mark.parameterize` so that it can be tested with several _good_ inputs -- boundary cases and such. As mentioned in the **Testing** section, the beaker pane is able to run, or debug, individual tests even when parameterized as can the integrated terminal -- `pytest -vv -s ./test/test_project0.py::test_given_good_input_when_project0_then_match_pattern[who]`
+```python
+[project.scripts]
+project0 = "project0.project0:project0cli"
+```
+   3. When you install the projects in this class, several things happen. The two important ones (for now) are: (a) you tell Python that you are using a package and where to find that package, and (b) you tell Python to create a _command-line interface_ so that you can run the code directly from the command line. Installation is done by typing
+```bash
+pip install --editable .
+```
+for a Windows-based machine or typing
+```bash
+pip3 install --editable .
+```
+for most Macs or Linux-based machines.
+Note that the trailing period is part of the command. Make sure you are in the root directory of your project, and then run this instruction from the command line.
 
-Always write at least one test for bad input, at least one test for good input, and however many tests are needed for boundary cases. Having a test makes debugging so much the easier because when a test fails, then using the testing pane to run the test in the debugger is simple. Hover over the test till the options appear and then choose the play button with the bug in the bottom corner. **Pro Tip**: in the gutter in the editor next to the test, right click, and choose "Debug Test". Debugging is covered in class, but it all starts with a `breakpoint`. Ask Google or an LLM for more information on using the vscode debugger.
+#### ▶️ Run the Code
+From the command line, type
 
-## Project Pass-off
+```bash
+project0 hello
+```
+You should see something like
+```txt
+I am not implemented yet.
+Traceback (most recent call last)
+...
+NotImplementedError
+```
+The ... indicates that the the function isn't yet implemented correctly. We'll talk about this in the next section.
 
-All the test files beginning with `project_passoff` contain tests used to score submissions. These can be run anytime either in the testing pane or with `pytest test/test_passoff*` in the terminal. Give it a try! The suffix indicates the bucket the tests belong in. In this project, bucket 80 means that 80 points are awarded if **all tests in the bucket pass**, but bucket 100 means that 80 points come from bucket 80 and another 20 points come from bucket 100. If all tests pass in both buckets, then 100 points are awarded. Tests in a bucket have the same point value , `#tests/bucket_points`, so partial credit in each bucket is possible.
 
-Projects in this course build on one another. That means that Project 2 relies on the code in Project 1.
-Every project has a minimum bucket in order for the code to be _functional enough_ to be able to move to the next project. The minimum bucket is indicated in each project, and it means that all preceding buckets must pass all tests and all tests in the minimum bucket must pass too.
+#### 🧠 Why Use a CLI?
+- It lets you build tool-like behavior: users can run your code from the terminal, pass arguments, and automate things.
+- It helps simulate how real-world Python packages work.
+- Many Python libraries include CLI tools (black, pytest, mypy, ruff, etc.).
 
-## Project Submission
 
-Projects are submitted by pushing a commit to the `master` branch of the repository. **Warning**: be sure to add any new files that are part of the submission. Use `git status` and `git add` to add all files to the commit. Commit with  `git commit`. Here these commands happen in the vscode integrated terminal, but can also be done using the _"Source Control"_ view for vscode. Access _"Source Control"_ by clicking the graph icon just below the magnifying glass in the left pane. Whether by command line or _"Source Control"_ view, it is the same. The below assumes command line in an integrated terminal.
+---
 
-<p align="center">
-<img src="./images/source-control.jpg" alt="drawing" width="800"/>
-</p>
+## ✏️ 7. Modify and Run `compute()` in `src/project0.py`
 
-The `git commit` opens an editor in vscode for the commit message. Please follow [these guidelines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) for the message. The first line is a summary that should be under 72 characters. It should start with an imperative "Add", "Update", "Remove", "Refactor", etc. followed by the description. For example, "Add solution to project 0". After the summary, a more detailed description should follow.
+### 7.1 Open and Explore the Code
 
-After the commit completes, `git push` will submit. Multiple submissions are allowed.
+1. Open the **Explorer** panel:
+   - Windows/Linux: `Ctrl+Shift+E`
+   - macOS: `⌘+Shift+E`
+   - Or click the Explorer icon <img src="images/explorer_icon.png" alt="Explorer Icon" width="18" /> in the Activity Bar
 
-A push on the `master` branch will kickoff the auto-grader on GitHub Classroom. In the classroom interface students can confirm their score (its the same tests run for pass-off) and inspect failing tests etc. **Heads up**: it takes several minutes for the auto-grader to run and the score to appear in [GitHub Classroom](https://classroom.github.com).
+2. Open `src/project0.py` and locate the function:
 
-**Final step for submission**: the submission is **not complete** until the URL for the GitHub repository is submitted on [Leaning Suite](https://learningsuite.byu.edu/). Goto to [Leaning Suite](https://learningsuite.byu.edu/), goto _"Assignments"_, and under _"Projects"_ choose _"Project 0 -- VSCode, Python, GitHub tutorials"_. This link should be a quiz with two questions: _What is the URL for your github repository?_ and _What is your GitHub user ID?_. These two items are used for grading. Grading involves scoring according to the pass-off tests and reviewing key parts of the solution for feedback.
+   ```python
+   def compute(input: str) -> str:
+       print("I am not implemented yet!")
+       raise NotImplementedError
+   ```
 
-### Checking your Score on GitHub
+   Ask your favorite AI assistant:
+   > What does `raise NotImplementedError` do?
 
-The score for the project is computed as explained in **Project Pass-off** and what is reported by running the pass-off tests should be the same as what is reported by the auto-grader provided by GitHub Classroom. It is possible to confirm the auto-grade score through GitHub. Auto-grading takes time, so don't try to check the score to quickly after the `git push` on the `master`.
+   💡 **Discussion**: Why might this be useful when you’re writing a function that isn’t ready yet?
 
-The auto-grading runs as a GitHub Action that is triggered whenever there is a commit added to the `master` branch. To see the auto-grading results, follow the submitted URL to repository on GitHub. It should look something like the below that shows the top portion of what would be in the browser window. Notice that in the bottom center of the image there is a green checkmark. The green checkmark indicates that __all pass-off tests passed_.  If any pass-off test failed, then there will be a red _x_ rather than the green checkmark.
+---
 
-<p align="center">
-<img src="./images/github-workflow-mark.jpg" alt="drawing" width="800"/>
-</p>
+### 7.2 Replace the `compute()` Function
 
-Click the green checkmark (or red x), and it should pull up a window like that below. Notice the _Details_ link on the right side of the image. Click that link to follow it to the summary page for the auto-grading.
+Replace the placeholder function with a working version:
 
-<p align="center">
-<img src="./images/github-workflow-popup.jpg" alt="drawing" width="800"/>
-</p>
+```python
+def compute(input: str) -> str:
+    return "Hello World " + input
+```
 
-The new window should look something like the below. Only the _Autograding Reporter_ is not expanded. The window shows each step in the GitHub Action to do the auto grading. Notice that there is a step for each of the buckets. These steps can be expanded to see exactly which tests passed or failed in any given bucket. It effectively summarizes the `pytest` results for each bucket. The _Autograding Reporter_ stage gathers up the results from each bucket and computes a final score. It also shows which tests passed, or failed, it each bucket.
+---
 
-<p align="center">
-<img src="./images/github-workflow-autograde-report.jpg" alt="drawing" width="800"/>
-</p>
+### 7.3 ✅ Run the Project from the Command Line
 
-## What's next?
+In your terminal (with the virtual environment activated and the package installed):
 
-Open the `./src/project0/project0.py` folder, read the comments, and start working on a solution! Remember, the goal of this project is to become familiar with vscode, the integrated terminal, `git`, `mypy`, `pre-commit`, `pytest`, project pass-off, and project submission. Only spend enough time on it to be comfortable with the tools and process.
+```bash
+project0 CS236
+```
+
+You should see:
+```
+Hello World CS236
+```
+
+This runs the CLI entrypoint defined in your `pyproject.toml`:
+```toml
+[project.scripts]
+project0 = "project0.project0:project0cli"
+```
+
+---
+
+### 7.4 🐞 Run and Debug from Inside VS Code
+
+To allow debugging inside VS Code without using the CLI, we've included the following at the bottom of `src/project0.py`:
+
+```python
+if __name__ == "__main__":
+    print("Running compute() for debugging:")
+    result = compute("VSCode")
+    print(result)
+```
+
+Run the `compute` function with input `"VSCode"` from within VSCode by clicking the ▶ **Run Python File** button in the top right of the editor.
+
+In the integrated terminal, you should see:
+```
+Running compute() for debugging:
+Hello World VSCode
+```
+
+---
+
+✅ You've now learned how to:
+- Modify and test a function
+- Use a `NotImplementedError` stub
+- Run the project from the command line and from within VSCode
+
+---
+
+## 🌐 8. Using Git: Modify → Stage → Commit → Push
+
+In this section, you’ll learn how to:
+- Make and track changes with Git
+- Use **4 key Git stages**:
+  1. Modify your code
+  2. Stage your changes (`git add`)
+  3. Commit those changes (`git commit`)
+  4. Push those commits to GitHub (`git push` or **Sync** in VS Code)
+
+You’ll learn how to do this both:
+- Using the **Integrated Terminal**
+- Using **VS Code’s Source Control Panel**
+
+---
+
+### ✅ What Each Step Means
+
+| Step   | Command         | What it does                                                               |
+|--------|------------------|----------------------------------------------------------------------------|
+| Modify | —                | You edit files in your workspace                                          |
+| Stage  | `git add`        | You tell Git _which changes_ should be included in the next snapshot      |
+| Commit| `git commit`     | You create a permanent snapshot of those staged changes                   |
+| Push   | `git push` / Sync| You upload your commits to GitHub so they are saved and shared            |
+
+---
+
+### 🖥️ 8.1 Using the Integrated Terminal
+
+Open the integrated terminal and do the following:
+
+1. **Modify your code**
+You don't need to do this since you've already been modifying yor code.
+
+2. **Stage your changes**
+
+   If you want to add a specific file:
+   ```bash
+   git add src/project0/project0.py
+   ```
+
+   If you want to stage all modified files:
+   ```bash
+   git add .
+   ```
+
+   > 💡 This step **does not save your work yet** — it just marks which files you want to commit.
+
+3. **Commit with a message**
+   ```bash
+   git commit -m "Implement compute() for Project 0. Command line commit"
+   ```
+
+   > 💬 A commit message should summarize what you changed. This creates a **named snapshot** of your work.
+
+4. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+   > This uploads your commits to GitHub, making them visible in the online repository.
+
+   If your default branch is named something else (e.g. `main` vs `master`), replace `main` as needed.
+
+---
+
+### 🧩 8.2 Using the VS Code Source Control Panel
+
+Open the _source control panel_.
+   - Shortcut:
+     - Windows/Linux: `Ctrl+Shift+G`
+     - macOS: `⌘+Shift+G`
+   - Or click the Source Control icon  <img src="images/source_control_icon.png" alt="Source Control" width="18" />
+
+1. **Change something in your code**
+
+2. **Stage your changes**
+   - Find the file(s) listed under **Changes**
+   - Hover and click the ➕ next to each file to stage them
+   - Or click the **+ Stage All Changes** button
+
+   > ⚠️ If you skip this step, your commit won’t include any files.
+
+3. **Write a commit message**
+   - Use the input box above the file list
+   - Example:
+     ```
+     Implement compute() for Project 0. VSCode commit.
+     ```
+
+4. **Click ✔ Commit**
+   - This saves your staged changes as a named commit.
+
+5. **Click 🔁 Sync to Push**
+   - Click the **Sync Changes** button at the bottom status bar
+   - Or open the **… menu → Push** from the Source Control panel
+
+   > “Sync” = Push + Pull = send your changes **and** get any updates from GitHub.
+
+
+---
+
+## ✅ 9. Verify on GitHub
+
+1. Open your repo URL in a browser.
+2. Confirm that your latest commit appears.
+3. If CI/tests are enabled, check that your code passed.
+
+---
+
+## 🧠 What You’ve Learned
+
+- Organizing projects under a single `CS236/` folder
+- Installing & using VS Code extensions
+- Navigating VS Code panels & icons
+- Running and debugging Python code inside VS Code
+- Understanding `src/` layout and `pyproject.toml` scripts
+- Cloning, staging, committing, and pushing with Git
+
+---
