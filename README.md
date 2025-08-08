@@ -1,6 +1,37 @@
 # CS 236 Project 0: VS Code Setup & Git Basics
 
 ## 🚀 0. Create a Base Folder
+## 📚 Table of Contents
+- [🚀 0. Create a Base Folder](#-0-create-a-base-folder)
+- [🖥️ 1. Install & Configure Visual Studio Code (VSCode)](#-1-install--configure-visual-studio-code-vscode)
+- [📥 2. Clone the Starter Repository](#-2-clone-the-starter-repository)
+- [📁 3. Explore Project Structure](#-3-explore-project-structure)
+  - [Confirm that you have the correct files](#confirm-that-you-have-the-correct-files)
+- [🧪 4. Set up your Python Environment with `venv`](#-4-set-up-your-python-environment-with-venv)
+  - [4.1 Deactivate Conda (if active)](#41-deactivate-conda-if-active)
+  - [4.2 Create a Virtual Environment](#42-create-a-virtual-environment)
+  - [4.3 Activate the Virtual Environment](#43-activate-the-virtual-environment)
+- [📦 5. Python Modules, Packages, and Installation](#-5-python-modules-packages-and-installation)
+  - [5.1 🔍 Python Modules vs. Packages](#51--python-modules-vs-packages)
+    - [🧱 Module](#-module)
+    - [📁 Package](#-package)
+  - [5.2 🧠 When to Use a Module vs. a Package](#52--when-to-use-a-module-vs-a-package)
+- [🛠️ 6. What is a CLI?](#-6-what-is-a-cli)
+    - [📁 Step-by-Step: How This Project Sets Up a CLI](#-step-by-step-how-this-project-sets-up-a-cli)
+    - [▶️ Run the Code](#-run-the-code)
+    - [🧠 Why Use a CLI?](#-why-use-a-cli)
+- [✏️ 7. Modify and Run `compute()` in `src/project0.py`](#-7-modify-and-run-compute-in-srcproject0py)
+  - [7.1 Open and Explore the Code](#71-open-and-explore-the-code)
+  - [7.2 Replace the `compute()` Function](#72-replace-the-compute-function)
+  - [7.3 ✅ Run the Project from the Command Line](#73--run-the-project-from-the-command-line)
+  - [7.4 🐞 Run and Debug from Inside VS Code](#74--run-and-debug-from-inside-vs-code)
+- [🌐 8. Using Git: Modify → Stage → Commit → Push](#-8-using-git-modify--stage--commit--push)
+  - [✅ What Each Step Means](#-what-each-step-means)
+  - [🖥️ 8.1 Using the Integrated Terminal](#-81-using-the-integrated-terminal)
+  - [🧩 8.2 Using the VS Code Source Control Panel](#-82-using-the-vs-code-source-control-panel)
+- [✅ 9. Verify on GitHub](#-9-verify-on-github)
+- [🧠 What You’ve Learned](#-what-youve-learned)
+
 1. On your machine, create a folder named `CS236`.
 2. All CS 236 starter repos (Project 0, 1, 2, …) will be cloned into `CS236/` to keep your work organized.
 
@@ -38,7 +69,7 @@ We've created a set of files that you will use for the rest of this project. The
 1. Open the **Source Control** panel in VSCode:
    - Windows/Linux: `Ctrl+Shift+G`
    - macOS: `⌘+Shift+G`
-   - Or click the source control icon <img src="images/source_control_icon.png" alt="Source Control" width="18" /> in the atvity bar
+   - Or click the source control icon <img src="images/source_control_icon.png" alt="Source Control" width="18" /> in the activity bar
 
 2. Click **Clone Repository**, paste your repo URL, and choose `CS236/` as the destination.
 
@@ -69,7 +100,7 @@ The key files and folders are:
 - **pyproject.toml** – configuration file that defines project metadata (name, version, dependencies) and CLI entrypoint; CLI stands for Command-Line Interface, letting you run `project0` as a script.
 - **images/** - images used in this tutorial
 - **src/** - source directory containing Python files used in the `project0` package.  The module `project0.py` is found in this `src\project0` directory folder. We'll look at the other files in the `src\project0` folder later.
-- **tests/** –  directory reserved for futureprojects where you'll use unit tests to verify your code automatically. One goal of CS 236 is to use unit tests to help you connect the mathematical ideas taught in the class with useful coding patterns and practices.
+- **tests/** –  directory reserved for future projects where you'll use unit tests to verify your code automatically. One goal of CS 236 is to use unit tests to help you connect the mathematical ideas taught in the class with useful coding patterns and practices.
 
 ### Confirm that you have the correct files
 There are two ways to check whether you have the correct files: using the integrated terminal and using the _explorer_ in VSCode.
@@ -92,8 +123,8 @@ We've learned that some prior classes have you install and automatically load an
   - **Shortcut**:
     - Windows/Linux: ``Ctrl+` ``
     - macOS: ``⌃` ``
-- Look to see if you have a conda environment enstalled. Look at the line before the prompt in the terminal. If it starts with `(base)` or has some other environment indicator in parentheses `(myenv)`, then you need to do the next step.
-- Deactive conda by typing
+- Look to see if you have a conda environment installed. Look at the line before the prompt in the terminal. If it starts with `(base)` or has some other environment indicator in parentheses `(who)`, then you need to do the next step.
+- Deactivate conda by typing
 
 ```bash
 conda deactivate
@@ -156,7 +187,7 @@ In this step, you’ll learn:
 
 ### 5.1 🔍 Python Modules vs. Packages
 
-Python projects are made up of **modules** and **packages**. Understanding the distinction will help you understand how the starter code for subsequent projects is organized. That understanding will help you oranize and import your files correctly.
+Python projects are made up of **modules** and **packages**. Understanding the distinction will help you understand how the starter code for subsequent projects is organized. That understanding will help you organize and import your files correctly.
 
 #### 🧱 Module
 
@@ -261,7 +292,7 @@ from myproject.cli import main
 
 A **CLI**, or **Command-Line Interface**, lets users interact with a program by typing commands into a terminal.
 
-In previous classes, you ran a Python script either by clicking buttons on a graphicla interface or by typing something like this from the command line
+In previous classes, you ran a Python script either by clicking buttons on a graphical interface or by typing something like this from the command line
 ```bash
 python3 myfile.py
 ```
