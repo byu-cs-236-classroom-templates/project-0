@@ -1,6 +1,5 @@
 # CS 236 Project 0: VS Code Setup & Git Basics
 
-## 🚀 0. Create a Base Folder
 ## 📚 Table of Contents
 - [🚀 0. Create a Base Folder](#-0-create-a-base-folder)
 - [🖥️ 1. Install & Configure Visual Studio Code (VSCode)](#-1-install--configure-visual-studio-code-vscode)
@@ -31,6 +30,8 @@
   - [🧩 8.2 Using the VS Code Source Control Panel](#-82-using-the-vs-code-source-control-panel)
 - [✅ 9. Verify on GitHub](#-9-verify-on-github)
 - [🧠 What You’ve Learned](#-what-youve-learned)
+
+## 🚀 0. Create a Base Folder
 
 1. On your machine, create a folder named `CS236`.
 2. All CS 236 starter repos (Project 0, 1, 2, …) will be cloned into `CS236/` to keep your work organized.
