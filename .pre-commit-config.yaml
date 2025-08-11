@@ -43,10 +43,3 @@ repos:
     -   id: mypy
         args: ["--strict", "--follow-imports=silent", "--ignore-missing-imports"]
         exclude: ^(test)
--   repo: local
-    hooks:
-    -   id: pyright
-        name: Pyright Type Check
-        entry: "bash -c 'command -v pyright >/dev/null 2>&1 && pyright \"$@\" || echo \"Skipping pyright: not found in PATH.\" >&2'"
-        language: system
-        types: [python]

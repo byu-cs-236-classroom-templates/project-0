@@ -56,13 +56,11 @@ You will use Visual Studio Code as the Integrated Development Environment (IDE) 
    - Or click the stacked block icon  <img src="images/extensions_panel.png" alt="Extensions Panel" width="18" /> in the Activity Bar
 
 3. **Search for** and **install**:
-   - **Python** (by Microsoft)
-   - **Python Debugger** (by Microsoft)
-   - **MyPy Type Checker** (by Microsoft)
-   - **Pylance** (by Microsoft)
-   - **Jupyter** (by Microsoft)
-   - **Ruff** (by Astral Software)
-   - **GitHub Actions** (by GitHub, optional, for managing Git workflows)
+   - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) Microsoft bundle
+   - [MyPy](https://marketplace.visualstudio.com/items?itemName=matangover.mypy) by Matan Grover
+   - [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) by Astral Software
+   - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) by Microsoft
+   - [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions) by GitHub
 
 ---
 

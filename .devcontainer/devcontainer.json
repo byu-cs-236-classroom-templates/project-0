@@ -41,17 +41,7 @@
         // Configure properties specific to VS Code.
         "vscode": {
             // Set *default* container specific settings.json values on container create.
-            "settings": {
-                "mypy.configFile": "${workspaceFolder}/pyproject.toml",
-                "mypy.path": "/home/vscode/.local/bin/mypy",
-                "python.analysis.extraPaths": [
-                    "${workspaceFolder}/src",
-                    "/home/vscode/.local/lib/python3.12/site-packages"
-                ],
-                "python.languageServer": "Pylance",
-                "python.analysis.diagnosticMode": "workspace"
-            },
-            "extensions": ["ms-python.python", "charliermarsh.ruff",  "streetsidesoftware.code-spell-checker"]
+            "extensions": ["ms-python.python", "matangover.mypy", "charliermarsh.ruff",  "GitHub.vscode-github-actions", "streetsidesoftware.code-spell-checker"]
         }
     }
 }
