@@ -1,6 +1,6 @@
 # CS 236 Project 0: VS Code Setup & Git Basics
 
-**Pre-requisite**: you must have Python 3.11 or higher and `git` installed on your system _before_ starting this project.
+**Pre-requisite**: you must have Python 3.12 or higher and `git` installed on your system _before_ starting this project.
 
 ## 📚 Table of Contents
 - [🚀 0. Create a Base Folder](#-0-create-a-base-folder)
@@ -362,16 +362,40 @@ The ... indicates that the the function isn't yet implemented correctly. We'll t
 
 2. Open `src/project0.py` and locate the function:
 
-   ```python
-   def compute(input: str) -> str:
-       print("I am not implemented yet!")
-       raise NotImplementedError
-   ```
+```python
+# TODO: This code should return "Hello World" plus whatever the value of "input" is.
+def compute(input: str) -> str:
+    # YOUR CODE GOES HERE
+    raise NotImplementedError
+```
 
-   Ask your favorite AI assistant:
-   > What does `raise NotImplementedError` do?
+Ask your favorite AI assistant:
+> What does `raise NotImplementedError` do?
 
-   💡 **Discussion**: Why might this be useful when you’re writing a function that isn’t ready yet?
+💡 **Discussion**: Why might this be useful when you’re writing a function that isn’t ready yet?
+
+💡 **How to find TODOs in the code?** The `pyproject.toml` file is configured to report comments that start with `TODO:` in the current open file in the _Problems_ view. In the `vscode` menu, choose _"View" --> "Problems"_ with the `src/project0/project0.py` file open.
+
+It is the `ruff` tool that detects and reports `TODO:` comments. The behavior is configured in the `pyproject.toml` file:
+
+```
+[tool.ruff]
+lint.extend-select = ["I","FIX002", "TD001"]
+target-version = "py312"
+```
+
+You can run `ruff` in the integrated terminal from the `project0` folder and see all the _problems_ that it finds:
+
+```
+/workspaces/project-0 (master) $ ruff check .
+src/project0/project0.py:15:3: FIX002 Line contains TODO, consider resolving the issue
+   |
+15 | # TODO: This code should return "Hello World" plus whatever the value of "input" is.
+   |   ^^^^ FIX002
+16 | def compute(input: str) -> str:
+17 |     # YOUR CODE GOES HERE
+   |
+```
 
 ---
 
