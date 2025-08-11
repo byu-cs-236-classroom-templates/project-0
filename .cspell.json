@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": [".devcontainer/", ".pre-commit-config.yaml"],
+  "ignorePaths": [".devcontainer/", ".pre-commit-config.yaml", ".gitignore", "pyproject.toml"],
   "words": [
     "venv",
     "pyproject",
