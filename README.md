@@ -1,8 +1,10 @@
 # CS 236 Project 0: VS Code Setup & Git Basics
 
+**Pre-requisite**: you must have Python 3.11 or higher and `git` installed on your system _before_ starting this project.
+
 ## 📚 Table of Contents
 - [🚀 0. Create a Base Folder](#-0-create-a-base-folder)
-- [🖥️ 1. Install & Configure Visual Studio Code (VSCode)](#-1-install--configure-visual-studio-code-vscode)
+- [🖥️ 1. Install & Configure Visual Studio Code (VSCode)](#%EF%B8%8F-1-install--configure-visual-studio-code-vscode)
 - [📥 2. Clone the Starter Repository](#-2-clone-the-starter-repository)
 - [📁 3. Explore Project Structure](#-3-explore-project-structure)
   - [Confirm that you have the correct files](#confirm-that-you-have-the-correct-files)
@@ -15,18 +17,18 @@
     - [🧱 Module](#-module)
     - [📁 Package](#-package)
   - [5.2 🧠 When to Use a Module vs. a Package](#52--when-to-use-a-module-vs-a-package)
-- [🛠️ 6. What is a CLI?](#-6-what-is-a-cli)
+- [🛠️ 6. What is a CLI?](#%EF%B8%8F-6-what-is-a-cli)
     - [📁 Step-by-Step: How This Project Sets Up a CLI](#-step-by-step-how-this-project-sets-up-a-cli)
-    - [▶️ Run the Code](#-run-the-code)
+    - [▶️ Run the Code](#%EF%B8%8F-run-the-code)
     - [🧠 Why Use a CLI?](#-why-use-a-cli)
-- [✏️ 7. Modify and Run `compute()` in `src/project0.py`](#-7-modify-and-run-compute-in-srcproject0py)
+- [✏️ 7. Modify and Run `compute()` in `src/project0.py`](#%EF%B8%8F-7-modify-and-run-compute-in-srcproject0py)
   - [7.1 Open and Explore the Code](#71-open-and-explore-the-code)
   - [7.2 Replace the `compute()` Function](#72-replace-the-compute-function)
   - [7.3 ✅ Run the Project from the Command Line](#73--run-the-project-from-the-command-line)
   - [7.4 🐞 Run and Debug from Inside VS Code](#74--run-and-debug-from-inside-vs-code)
 - [🌐 8. Using Git: Modify → Stage → Commit → Push](#-8-using-git-modify--stage--commit--push)
   - [✅ What Each Step Means](#-what-each-step-means)
-  - [🖥️ 8.1 Using the Integrated Terminal](#-81-using-the-integrated-terminal)
+  - [🖥️ 8.1 Using the Integrated Terminal](#%EF%B8%8F-81-using-the-integrated-terminal)
   - [🧩 8.2 Using the VS Code Source Control Panel](#-82-using-the-vs-code-source-control-panel)
 - [✅ 9. Verify on GitHub](#-9-verify-on-github)
 - [🧠 What You’ve Learned](#-what-youve-learned)
@@ -306,7 +308,7 @@ project0 hello
 ```
 #### 📁 Step-by-Step: How This Project Sets Up a CLI
 
-   1.   Your code is in a function named project0cli() in src/project0/project0.py
+   1.   Your code is in a function named `project0cli()` in `src/project0/project0.py`
 
    2.   The `pyproject.toml` file contains:
 
@@ -397,31 +399,32 @@ You should see:
 Hello World CS236
 ```
 
-This runs the CLI entrypoint defined in your `pyproject.toml`:
-```toml
-[project.scripts]
-project0 = "project0.project0:project0cli"
-```
+This runs the CLI entrypoint defined in your `pyproject.toml` as discussed in [🛠️ 6. What is a CLI?](#%EF%B8%8F-6-what-is-a-cli):
 
 ---
 
 ### 7.4 🐞 Run and Debug from Inside VS Code
 
-To allow debugging inside VS Code without using the CLI, we've included the following at the bottom of `src/project0.py`:
+To allow debugging inside VS Code without using the CLI, we've included the script `debug_project0.py` with tha following code:
 
 ```python
+import sys
+sys.argv = ["project0", "CS236"]
+
+from project0.project0 import project0cli
+
 if __name__ == "__main__":
-    print("Running compute() for debugging:")
-    result = compute("VSCode")
-    print(result)
+    project0cli()
 ```
+
+The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`.
 
 Run the `compute` function with input `"VSCode"` from within VSCode by clicking the ▶ **Run Python File** button in the top right of the editor.
 
-In the integrated terminal, you should see:
+In the integrated terminal, assuming you have completed , you should see:
+
 ```
-Running compute() for debugging:
-Hello World VSCode
+Hello World CS236
 ```
 
 ---
