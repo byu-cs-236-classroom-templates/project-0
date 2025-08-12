@@ -7,7 +7,7 @@ from project0.project0 import compute
 # from typing import Iterable, List, Tuple
 
 _TEST_FUNC = compute
-_TEST_ROOT_DIR = "./test/resources/project0-passoff/"
+_TEST_ROOT_DIR = "./tests/resources/project0-passoff/"
 _ANSWER_PREFIX = "answer"
 _ANSWER_EXTENSION = ".txt"
 _INPUT_PREFIX = "input"
