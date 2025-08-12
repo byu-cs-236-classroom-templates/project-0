@@ -1,39 +1,43 @@
 # CS 236 Project 0: VS Code Setup & Git Basics
 
-**Pre-requisite**: you must have Python 3.12 or higher and `git` installed on your system _before_ starting this project.
+**Pre-requisite**: you must have Python 3.12 or higher and `git` installed on your system _before_ starting this project. If you aren't sure whether these are installed on your system or how to install them, feel free to talk to the TAs or to work with an AI Assistant for help.
 
-## 📚 Table of Contents
-- [🚀 0. Create a Base Folder](#-0-create-a-base-folder)
-- [🖥️ 1. Install & Configure Visual Studio Code (VSCode)](#%EF%B8%8F-1-install--configure-visual-studio-code-vscode)
-- [📥 2. Clone the Starter Repository](#-2-clone-the-starter-repository)
-- [📁 3. Explore Project Structure](#-3-explore-project-structure)
+## Table of Contents
+- [0. Create a Base Folder](#0-create-a-base-folder)
+- [1. Install & Configure Visual Studio Code (VSCode)](#1-install--configure-visual-studio-code-vscode)
+- [2. Clone the Starter Repository](#2-clone-the-starter-repository)
+- [3. Explore Project Structure](#3-explore-project-structure)
   - [Confirm that you have the correct files](#confirm-that-you-have-the-correct-files)
-- [🧪 4. Set up your Python Environment with `venv`](#-4-set-up-your-python-environment-with-venv)
+- [4. Set up your Python Environment with `venv`](#4-set-up-your-python-environment-with-venv)
   - [4.1 Deactivate Conda (if active)](#41-deactivate-conda-if-active)
   - [4.2 Create a Virtual Environment](#42-create-a-virtual-environment)
   - [4.3 Activate the Virtual Environment](#43-activate-the-virtual-environment)
-- [📦 5. Python Modules, Packages, and Installation](#-5-python-modules-packages-and-installation)
-  - [5.1 🔍 Python Modules vs. Packages](#51--python-modules-vs-packages)
-    - [🧱 Module](#-module)
-    - [📁 Package](#-package)
-  - [5.2 🧠 When to Use a Module vs. a Package](#52--when-to-use-a-module-vs-a-package)
-- [🛠️ 6. What is a CLI?](#%EF%B8%8F-6-what-is-a-cli)
-    - [📁 Step-by-Step: How This Project Sets Up a CLI](#-step-by-step-how-this-project-sets-up-a-cli)
-    - [▶️ Run the Code](#%EF%B8%8F-run-the-code)
-    - [🧠 Why Use a CLI?](#-why-use-a-cli)
-- [✏️ 7. Modify and Run `compute()` in `src/project0.py`](#%EF%B8%8F-7-modify-and-run-compute-in-srcproject0py)
+- [5. Python Modules, Packages, and Installation](#5-python-modules-packages-and-installation)
+  - [5.1 Python Modules vs. Packages](#51-python-modules-vs-packages)
+    - [Module](#module)
+    - [Package](#package)
+  - [5.2 When to Use a Module vs. a Package](#52-when-to-use-a-module-vs-a-package)
+- [6. What is a CLI?](#6-what-is-a-cli)
+    - [Why Use a CLI?](#why-use-a-cli)
+    - [Step-by-Step: How This Project Sets Up a CLI](#step-by-step-how-this-project-sets-up-a-cli)
+    - [6.1-Install the project0 package](#61-install-the-project0-package)
+    - [6.2-Run the Code](#62-run-the-code)
+- [7. Modify and Run `compute()` in `src/project0.py`](#7-modify-and-run-compute-in-srcproject0py)
   - [7.1 Open and Explore the Code](#71-open-and-explore-the-code)
-  - [7.2 Replace the `compute()` Function](#72-replace-the-compute-function)
-  - [7.3 ✅ Run the Project from the Command Line](#73--run-the-project-from-the-command-line)
-  - [7.4 🐞 Run and Debug from Inside VS Code](#74--run-and-debug-from-inside-vs-code)
-- [🌐 8. Using Git: Modify → Stage → Commit → Push](#-8-using-git-modify--stage--commit--push)
-  - [✅ What Each Step Means](#-what-each-step-means)
-  - [🖥️ 8.1 Using the Integrated Terminal](#%EF%B8%8F-81-using-the-integrated-terminal)
-  - [🧩 8.2 Using the VS Code Source Control Panel](#-82-using-the-vs-code-source-control-panel)
-- [✅ 9. Verify on GitHub](#-9-verify-on-github)
-- [🧠 What You’ve Learned](#-what-youve-learned)
+  - [7.2 Learn Learn How to Use TODOs](#72-learn-how-to-use-todos)
+  - [7.3 Replace the `compute()` Function](#73-replace-the-compute-function)
+  - [7.4 Run the Project from the Command Line](#74-run-the-project-from-the-command-line)
+  - [7.5 Run from Inside VS Code](#75-run-from-inside-vs-code)
+- [8. Using Git: Modify → Stage → Commit → Push](#8-using-git-modify-stage-commit-push)
+  - [What Each Step Means](#what-each-step-means)
+  - [8.1 Using the Integrated Terminal](#81-using-the-integrated-terminal)
+  - [8.2 Using the VS Code Source Control Panel](#82-using-the-vs-code-source-control-panel)
+- [9. Verify on GitHub](#9-verify-on-github)
+- [What You’ve Learned](#what-youve-learned)
 
-## 🚀 0. Create a Base Folder
+---
+
+## 0. Create a Base Folder
 
 1. On your machine, create a folder named `CS236`.
 2. All CS 236 starter repos (Project 0, 1, 2, …) will be cloned into `CS236/` to keep your work organized.
@@ -42,7 +46,7 @@ If you don't know for sure how to create this folder, ask your favorite AI tool 
 
 ---
 
-## 🖥️ 1. Install & Configure Visual Studio Code (VSCode)
+## 1. Install & Configure Visual Studio Code (VSCode)
 You will use Visual Studio Code as the Integrated Development Environment (IDE) for this class. This section describes how to install and configure VSCode so that it will run Python and the tools you will need in this and subsequent projects.
 
 1. **Download & install** VSCode by following the instructions from:
@@ -64,7 +68,7 @@ You will use Visual Studio Code as the Integrated Development Environment (IDE) 
 
 ---
 
-## 📥 2. Clone the Starter Repository
+## 2. Clone the Starter Repository
 We've created a set of files that you will use for the rest of this project. The files are stored in a _git repository_. This section explains how you copy the files from where we've placed them to your local machine. A subsequent section explains how you upload your files to `git` so that they will be saved in the cloud and so that your code can be automatically graded.
 
 1. Open the **Source Control** panel in VSCode:
@@ -80,7 +84,7 @@ The next section describes the folders that you have copied (or _cloned_) to you
 
 ---
 
-## 📁 3. Explore Project Structure
+## 3. Explore Project Structure
 
 The root folder is the `CS236` directory you created earlier. Inside that folder is another folder named something like `project0`. The precise name might vary, but you'll see the name `project0` somewhere in the name. Inside the `project0` are a handful of other files and folders. The general structure is given by
 
@@ -100,18 +104,18 @@ The key files and folders are:
 - **README.md** – this tutorial
 - **pyproject.toml** – configuration file that defines project metadata (name, version, dependencies) and CLI entrypoint; CLI stands for Command-Line Interface, letting you run `project0` as a script.
 - **images/** - images used in this tutorial
-- **src/** - source directory containing Python files used in the `project0` package.  The module `project0.py` is found in this `src\project0` directory folder. We'll look at the other files in the `src\project0` folder later.
+- **src/** - source directory containing Python files used in the `project0` package.  The module `project0.py` is found in this `src/project0` directory folder. We'll look at the other files in the `src/project0` folder later.
 - **tests/** –  directory reserved for future projects where you'll use unit tests to verify your code automatically. One goal of CS 236 is to use unit tests to help you connect the mathematical ideas taught in the class with useful coding patterns and practices.
 
 ### Confirm that you have the correct files
-There are two ways to check whether you have the correct files: using the integrated terminal and using the _explorer_ in VSCode.
+There are two ways to check whether you have the correct files: using the integrated terminal and using the _Explorer Panel_ in VSCode.
 
 **Using the Integrated Terminal in VSCode.** Open the integrated terminal and list the files. Make sure that you see `images`, `pyproject.toml`, `README.md`, `src`, and `tests`.
 
 **Using Explorer in VSCode.**
 Click the explorer icon  <img src="images/explorer_icon.png" alt="Explorer Icon" width="18" /> in the Activity Bar. This will open a window on the left side of VSCode. The window should show all the files listed above and a few others that we aren't using right now.
 
-## 🧪 4. Set up your Python Environment with `venv`
+## 4. Set up your Python Environment with `venv`
 
 A _virtual environment_ is a lightweight, local Python environment used to isolate project-specific packages from the default Python settings on your computer. Using a virtual environment prevents dependency conflicts and ensures that your installed tools (like  `mypy`, `ruff`, or `pytest`, which we'll use in subsequent projects) behave consistently across machines. The name of the virtual environment we will use is `venv`.
 
@@ -168,14 +172,14 @@ and on a Mac or Linux-based machine
 ```bash
 source .venv/bin/activate
 ```
-If you are having trouble activating the virtual environment, ask an AI agent how to tell machine you are working on and ask for help.
+If you are having trouble activating the virtual environment, ask an AI agent how to tell which machine you are working on and ask for help.
 
 You'll know that you've been successful if the name of the prompt changes and starts with `(.venv)`.
 
 ---
 
 ---
-## 📦 5. Python Modules, Packages, and Installation
+## 5. Python Modules, Packages, and Installation
 
 In this step, you’ll learn:
 
@@ -186,11 +190,11 @@ In this step, you’ll learn:
 
 ---
 
-### 5.1 🔍 Python Modules vs. Packages
+### 5.1 Python Modules vs. Packages
 
 Python projects are made up of **modules** and **packages**. Understanding the distinction will help you understand how the starter code for subsequent projects is organized. That understanding will help you organize and import your files correctly.
 
-#### 🧱 Module
+#### Module
 
 - A **module** is a single `.py` file.
 - It can contain functions, variables, classes, and runnable code.
@@ -221,7 +225,7 @@ compute("input to function")
 ```
 
 
-#### 📁 Package
+#### Package
 
 - A **package** is a folder that contains a special file called `__init__.py`.
 - It may also contain multiple `.py` files or even sub-packages.
@@ -246,11 +250,11 @@ from project0.project0
 the  _project0._ (note the trailing period) indicates that the package is saved in the `project0` directory, and the _project0_ after the period indicates that we're importing from the file `project0.py`.
 
 
-💡 This project and the starter code for future projects all use `src/` as the root directory for code. This class will always configure Python to look for packages there. The file `pyproject.toml` configures Python to look in the `src/` directory. The next section says a little more about what else is done by the file `pyproject.toml`.
+This project and the starter code for future projects all use `src/` as the root directory for code. This class will always configure Python to look for packages there. The file `pyproject.toml` configures Python to look in the `src/` directory. The next section says a little more about what else is done by the file `pyproject.toml`.
 
-### 5.2 🧠 When to Use a Module vs. a Package
+### 5.2 When to Use a Module vs. a Package
 
-✅ Use a **module** when:
+Use a **module** when:
 - You’re working on a small, focused piece of functionality
 - All your code fits comfortably in one file
 - You don’t need to split the logic across multiple files
@@ -261,7 +265,7 @@ the  _project0._ (note the trailing period) indicates that the package is saved 
     - Simple to write and import
     - Great for scripts, utilities, and small tools
 
-✅ Use a **package** when:
+Use a **package** when:
 - Your project grows beyond a single file
 - You want to organize related modules into a namespace (folder)
 - You have multiple concerns (e.g., CLI, logic, tests, helpers)
@@ -289,7 +293,7 @@ from myproject.cli import main
 
 ---
 
-## 🛠️ 6. What is a CLI?
+## 6. What is a CLI?
 
 A **CLI**, or **Command-Line Interface**, lets users interact with a program by typing commands into a terminal.
 
@@ -304,7 +308,13 @@ A command-line interface allows the a program to be run directly as a command wi
 ```bash
 project0 hello
 ```
-#### 📁 Step-by-Step: How This Project Sets Up a CLI
+
+#### Why Use a CLI?
+- It lets you build tool-like behavior: users can run your code from the terminal, pass arguments, and automate things.
+- It helps simulate how real-world Python packages work.
+- Many Python libraries include CLI tools (black, pytest, mypy, ruff, etc.).
+
+#### Step-by-Step: How This Project Sets Up a CLI
 
    1.   Your code is in a function named `project0cli()` in `src/project0/project0.py`
 
@@ -314,18 +324,22 @@ project0 hello
 [project.scripts]
 project0 = "project0.project0:project0cli"
 ```
-   3. When you install the projects in this class, several things happen. The two important ones (for now) are: (a) you tell Python that you are using a package and where to find that package, and (b) you tell Python to create a _command-line interface_ so that you can run the code directly from the command line. Installation is done by typing
+   3. When you install the projects in this class, several things happen. The two important ones (for now) are: (a) you tell Python that you are using a package and where to find that package, and (b) you tell Python to create a _command-line interface_ so that you can run the code directly from the command line. 
+   
+### 6.1 Install the project0 package
+Type
 ```bash
-pip install --editable .
+pip install --editable ".[dev]"
 ```
 for a Windows-based machine or typing
 ```bash
-pip3 install --editable .
+pip3 install --editable ".[dev]"
 ```
 for most Macs or Linux-based machines.
-Note that the trailing period is part of the command. Make sure you are in the root directory of your project, and then run this instruction from the command line.
 
-#### ▶️ Run the Code
+Note that the quotation marks and brackets in `".[dev"]` are part of the command. Make sure you are in the root directory of your project, and then run this instruction from the command line.
+
+### 6.2 Run the Code
 From the command line, type
 
 ```bash
@@ -340,16 +354,9 @@ NotImplementedError
 ```
 The ... indicates that the the function isn't yet implemented correctly. We'll talk about this in the next section.
 
-
-#### 🧠 Why Use a CLI?
-- It lets you build tool-like behavior: users can run your code from the terminal, pass arguments, and automate things.
-- It helps simulate how real-world Python packages work.
-- Many Python libraries include CLI tools (black, pytest, mypy, ruff, etc.).
-
-
 ---
 
-## ✏️ 7. Modify and Run `compute()` in `src/project0.py`
+## 7. Modify and Run `compute()` in `src/project0.py`
 
 ### 7.1 Open and Explore the Code
 
@@ -370,11 +377,18 @@ def compute(input: str) -> str:
 Ask your favorite AI assistant:
 > What does `raise NotImplementedError` do?
 
-💡 **Discussion**: Why might this be useful when you’re writing a function that isn’t ready yet?
+**Discussion**: Why might this be useful when you’re writing a function that isn’t ready yet?
 
-💡 **How to find TODOs in the code?** The `pyproject.toml` file is configured to report comments that start with `TODO:` in the current open file in the _Problems_ view. In the `vscode` menu, choose _"View" --> "Problems"_ with the `src/project0/project0.py` file open.
+### 7.2 Learn How to Use TODOs
 
-It is the `ruff` tool that detects and reports `TODO:` comments. The behavior is configured in the `pyproject.toml` file:
+**How to find TODOs in the code?** The `pyproject.toml` file is configured to report comments that start with `TODO:`. Adding comments like this is a great way to keep track of all the little things that pop into your mind while you are coding.
+
+You can see all your TODOs in _VSCode_ the _Problems_ view. You can access this either 
+- by opening the file `src/project0/project0.py`, going to the _VS Code_ menu, and choosing _"View" --> "Problems"_ with the `src/project0/project0.py` file open, or
+- by opening the integrated terminal and clicking on the `PROBLEMS` tab at the top of the terminal. 
+
+**TODOs and Ruff**
+When you installed the `project0` package, the `pyproject.toml` file installed a tool called `ruff`. 
 
 ```
 [tool.ruff]
@@ -382,10 +396,15 @@ lint.extend-select = ["I","FIX002", "TD001"]
 target-version = "py312"
 ```
 
-You can run `ruff` in the integrated terminal from the `project0` folder and see all the _problems_ that it finds:
+It is the `ruff` tool that detects and reports `TODO:` comments. The behavior is configured in the `pyproject.toml` file:
 
+You can run `ruff` in the integrated terminal from the `project0` folder by typing
+```bash
+ruff check .
 ```
-/workspaces/project-0 (master) $ ruff check .
+and see all the _problems_ that it finds. You'll get soemthing in your terminal that looks like 
+
+```bash
 src/project0/project0.py:15:3: FIX002 Line contains TODO, consider resolving the issue
    |
 15 | # TODO: This code should return "Hello World" plus whatever the value of "input" is.
@@ -395,9 +414,11 @@ src/project0/project0.py:15:3: FIX002 Line contains TODO, consider resolving the
    |
 ```
 
+Remove the `TODO` from the file and confirm that it disappears from the `PROBLEMS` and also from the output of running `ruff check .`.
+
 ---
 
-### 7.2 Replace the `compute()` Function
+### 7.3 Replace the `compute()` Function
 
 Replace the placeholder function with a working version:
 
@@ -408,7 +429,7 @@ def compute(input: str) -> str:
 
 ---
 
-### 7.3 ✅ Run the Project from the Command Line
+### 7.4 Run the Project from the Command Line
 
 In your terminal (with the virtual environment activated and the package installed):
 
@@ -421,13 +442,13 @@ You should see:
 Hello World CS236
 ```
 
-This runs the CLI entrypoint defined in your `pyproject.toml` as discussed in [🛠️ 6. What is a CLI?](#%EF%B8%8F-6-what-is-a-cli):
+This runs the CLI entrypoint defined in your `pyproject.toml` as discussed in [6. What is a CLI?](#6-what-is-a-cli):
 
 ---
 
-### 7.4 🐞 Run and Debug from Inside VS Code
+### 7.5 Run from Inside VS Code
 
-To allow debugging inside VS Code without using the CLI, we've included the script `debug_project0.py` with tha following code:
+To allow running (debugging) inside VS Code without using the CLI, we've included the script `debug_project0.py` which has the following code:
 
 ```python
 import sys
@@ -439,26 +460,32 @@ if __name__ == "__main__":
     project0cli()
 ```
 
-The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`.
+The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`. You can change the input to `compute` function by changing `"CS236"` to something else. For now, just keep it the same, but make a mental note that if you want to modify the input to a file you are debugging, you will need to change that parameter in `debug_project0.py`. 
 
-Run the `compute` function with input `"VSCode"` from within VSCode by clicking the ▶ **Run Python File** button in the top right of the editor.
+Before you can run or debug a program, you need to tell _VS Code_ which version of Python to use. Click on `View` in the menu anc select `Command Palette`. Start typing `Python` and click on `Python:SelectInterpreter`. Choose the one that starts with `.venv` so that it uses the version of Python that is part of your virtual environment.
 
-In the integrated terminal, assuming you have completed , you should see:
+
+Once you've selected the correct Python interpreter, run the `compute` function with input `"VSCode"` from within VSCode by clicking the ▶ **Run Python File** button in the top right of the editor.
+
+If you have modified the code as instructed above, you should see the following in the integrated terminal:
 
 ```
 Hello World CS236
 ```
 
+We won't spend time talking about how to set break points and step through code, but now that you have configured _VS Code_ you can ask your favorite AI tool for a tutorial on how to use the debugger in _VS Code_ and it will step you through things. 
+
 ---
 
-✅ You've now learned how to:
+You've now learned how to:
 - Modify and test a function
 - Use a `NotImplementedError` stub
+- Manage TODOs
 - Run the project from the command line and from within VSCode
 
 ---
 
-## 🌐 8. Using Git: Modify → Stage → Commit → Push
+## 8. Using Git: Modify, Stage, Commit, Push
 
 In this section, you’ll learn how to:
 - Make and track changes with Git
@@ -474,7 +501,7 @@ You’ll learn how to do this both:
 
 ---
 
-### ✅ What Each Step Means
+### What Each Step Means
 
 | Step   | Command         | What it does                                                               |
 |--------|------------------|----------------------------------------------------------------------------|
@@ -485,7 +512,7 @@ You’ll learn how to do this both:
 
 ---
 
-### 🖥️ 8.1 Using the Integrated Terminal
+### 8.1 Using the Integrated Terminal
 
 Open the integrated terminal and do the following:
 
@@ -504,14 +531,14 @@ You don't need to do this since you've already been modifying yor code.
    git add .
    ```
 
-   > 💡 This step **does not save your work yet** — it just marks which files you want to commit.
+   > This step **does not save your work yet** — it just marks which files you want to commit.
 
 3. **Commit with a message**
    ```bash
    git commit -m "Implement compute() for Project 0. Command line commit"
    ```
 
-   > 💬 A commit message should summarize what you changed. This creates a **named snapshot** of your work.
+   > A commit message should summarize what you changed. This creates a **named snapshot** of your work.
 
 4. **Push to GitHub**
    ```bash
@@ -524,7 +551,7 @@ You don't need to do this since you've already been modifying yor code.
 
 ---
 
-### 🧩 8.2 Using the VS Code Source Control Panel
+### 8.2 Using the VS Code Source Control Panel
 
 Open the _source control panel_.
    - Shortcut:
@@ -539,7 +566,7 @@ Open the _source control panel_.
    - Hover and click the ➕ next to each file to stage them
    - Or click the **+ Stage All Changes** button
 
-   > ⚠️ If you skip this step, your commit won’t include any files.
+   > If you skip this step, your commit won’t include any files.
 
 3. **Write a commit message**
    - Use the input box above the file list
@@ -551,7 +578,7 @@ Open the _source control panel_.
 4. **Click ✔ Commit**
    - This saves your staged changes as a named commit.
 
-5. **Click 🔁 Sync to Push**
+5. **Click Sync to Push**
    - Click the **Sync Changes** button at the bottom status bar
    - Or open the **… menu → Push** from the Source Control panel
 
@@ -560,7 +587,7 @@ Open the _source control panel_.
 
 ---
 
-## ✅ 9. Verify on GitHub
+## 9. Verify on GitHub
 
 1. Open your repo URL in a browser.
 2. Confirm that your latest commit appears.
@@ -568,12 +595,13 @@ Open the _source control panel_.
 
 ---
 
-## 🧠 What You’ve Learned
+## What You’ve Learned
 
 - Organizing projects under a single `CS236/` folder
 - Installing & using VS Code extensions
 - Navigating VS Code panels & icons
-- Running and debugging Python code inside VS Code
+- Using TODOs
+- Running Python code inside VS Code
 - Understanding `src/` layout and `pyproject.toml` scripts
 - Cloning, staging, committing, and pushing with Git
 
