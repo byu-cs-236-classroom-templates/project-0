@@ -1,12 +1,18 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": [".devcontainer/", ".pre-commit-config.yaml", ".gitignore", "pyproject.toml"],
+  "ignorePaths": [
+    ".devcontainer/",
+    ".pre-commit-config.yaml",
+    ".gitignore",
+    "pyproject.toml"
+  ],
   "words": [
-    "venv",
+    "Matan",
+    "myproject",
+    "mypy",
     "pyproject",
     "pytest",
-    "mypy",
-    "myproject",
+    "venv"
   ]
 }

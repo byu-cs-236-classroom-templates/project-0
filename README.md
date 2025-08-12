@@ -324,8 +324,8 @@ project0 hello
 [project.scripts]
 project0 = "project0.project0:project0cli"
 ```
-   3. When you install the projects in this class, several things happen. The two important ones (for now) are: (a) you tell Python that you are using a package and where to find that package, and (b) you tell Python to create a _command-line interface_ so that you can run the code directly from the command line. 
-   
+   3. When you install the projects in this class, several things happen. The two important ones (for now) are: (a) you tell Python that you are using a package and where to find that package, and (b) you tell Python to create a _command-line interface_ so that you can run the code directly from the command line.
+
 ### 6.1 Install the project0 package
 Type
 ```bash
@@ -383,12 +383,12 @@ Ask your favorite AI assistant:
 
 **How to find TODOs in the code?** The `pyproject.toml` file is configured to report comments that start with `TODO:`. Adding comments like this is a great way to keep track of all the little things that pop into your mind while you are coding.
 
-You can see all your TODOs in _VSCode_ the _Problems_ view. You can access this either 
+You can see all your TODOs in _VSCode_ the _Problems_ view. You can access this either
 - by opening the file `src/project0/project0.py`, going to the _VS Code_ menu, and choosing _"View" --> "Problems"_ with the `src/project0/project0.py` file open, or
-- by opening the integrated terminal and clicking on the `PROBLEMS` tab at the top of the terminal. 
+- by opening the integrated terminal and clicking on the `PROBLEMS` tab at the top of the terminal.
 
 **TODOs and Ruff**
-When you installed the `project0` package, the `pyproject.toml` file installed a tool called `ruff`. 
+When you installed the `project0` package, the `pyproject.toml` file installed a tool called `ruff`.
 
 ```
 [tool.ruff]
@@ -402,7 +402,7 @@ You can run `ruff` in the integrated terminal from the `project0` folder by typi
 ```bash
 ruff check .
 ```
-and see all the _problems_ that it finds. You'll get soemthing in your terminal that looks like 
+and see all the _problems_ that it finds. You'll get something in your terminal that looks like
 
 ```bash
 src/project0/project0.py:15:3: FIX002 Line contains TODO, consider resolving the issue
@@ -460,7 +460,7 @@ if __name__ == "__main__":
     project0cli()
 ```
 
-The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`. You can change the input to `compute` function by changing `"CS236"` to something else. For now, just keep it the same, but make a mental note that if you want to modify the input to a file you are debugging, you will need to change that parameter in `debug_project0.py`. 
+The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`. You can change the input to `compute` function by changing `"CS236"` to something else. For now, just keep it the same, but make a mental note that if you want to modify the input to a file you are debugging, you will need to change that parameter in `debug_project0.py`.
 
 Before you can run or debug a program, you need to tell _VS Code_ which version of Python to use. Click on `View` in the menu anc select `Command Palette`. Start typing `Python` and click on `Python:SelectInterpreter`. Choose the one that starts with `.venv` so that it uses the version of Python that is part of your virtual environment.
 
@@ -473,7 +473,7 @@ If you have modified the code as instructed above, you should see the following 
 Hello World CS236
 ```
 
-We won't spend time talking about how to set break points and step through code, but now that you have configured _VS Code_ you can ask your favorite AI tool for a tutorial on how to use the debugger in _VS Code_ and it will step you through things. 
+We won't spend time talking about how to set break points and step through code, but now that you have configured _VS Code_ you can ask your favorite AI tool for a tutorial on how to use the debugger in _VS Code_ and it will step you through things.
 
 ---
 
