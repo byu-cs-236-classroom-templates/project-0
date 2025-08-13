@@ -76,7 +76,7 @@ We've created a set of files that you will use for the rest of this project. The
    - macOS: `⌘+Shift+G`
    - Or click the source control icon <img src="images/source_control_icon.png" alt="Source Control" width="18" /> in the activity bar
 
-2. Click **Clone Repository**, paste your repo URL, and choose `CS236/` as the destination.
+2. Click **Clone Repository**, paste your repo URL, and choose `CS236/` as the destination. You can find the repo URL by clicking on the green _Code_ button at the top of the GitHub page.
 
 3. When prompted, click **Open** to load the project in VS Code.
 
@@ -203,7 +203,7 @@ Example. Suppose we have a file `project0.py` that contains only the definition 
 ```python
 # src/project0.py
 def compute(input: str) -> str:
-    return "Hello " + input
+    return "Hello World " + input
 ```
 
 We can import a module in Python using the following command, which is placed at the top of a file.
