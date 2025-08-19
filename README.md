@@ -22,7 +22,7 @@
     - [Step-by-Step: How This Project Sets Up a CLI](#step-by-step-how-this-project-sets-up-a-cli)
     - [6.1-Install the project0 package](#61-install-the-project0-package)
     - [6.2-Run the Code](#62-run-the-code)
-- [7. Modify and Run `compute()` in `src/project0.py`](#7-modify-and-run-compute-in-srcproject0py)
+- [7. Modify and Run `compute()` in `src/project0/project0.py`](#7-modify-and-run-compute-in-srcproject0py)
   - [7.1 Open and Explore the Code](#71-open-and-explore-the-code)
   - [7.2 Learn Learn How to Use TODOs](#72-learn-how-to-use-todos)
   - [7.3 Replace the `compute()` Function](#73-replace-the-compute-function)
