@@ -86,11 +86,11 @@ The next section describes the folders that you have copied (or _cloned_) to you
 
 ## 3. Explore Project Structure
 
-The root folder is the `CS236` directory you created earlier. Inside that folder is another folder named something like `project0`. The precise name might vary, but you'll see the name `project0` somewhere in the name. Inside the `project0` are a handful of other files and folders. The general structure is given by
+The root folder is the `CS236` directory you created earlier. Inside that folder is another folder named something like `project0-githubid`. The precise name depends on your GitHub ID. If that ID is `supra`, then the folder will be something like `project0-supra`. Inside that folder are a handful of other files and folders. The general structure is given by
 
 ```
 CS236
-└── project0/
+└── project0-githubid/
     ├── README.md
     ├── pyproject.toml
     ├── images/
@@ -138,7 +138,7 @@ conda deactivate
 You'll know you've been successful if the `(base)` part of the prompt will have disappeared.
 
 ### 4.2 Create a Virtual Environment
-You now have to create the virtual environment so that all the code you execute inside of VSCode uses that environment. Make sure you are in your `CS236/` directory. What you type next depends on what type of computer you are using and how it is configured. Usually, PCs install the latest version of Python so that you can execute it by typing `python`. Macs usually ship with an old version of python and the command `python` points to that old version. To overcome this, you run python by typing `python3`. Thus,
+You now have to create the virtual environment so that all the code you execute inside of VSCode uses that environment. Make sure you are in your `CS236/project0-githubid` directory. What you type next depends on what type of computer you are using and how it is configured. Usually, PCs install the latest version of Python so that you can execute it by typing `python`. Macs usually ship with an old version of python and the command `python` points to that old version. To overcome this, you run python by typing `python3`. Thus,
 
 If on a PC then you should type
 ```bash
@@ -165,7 +165,7 @@ You now have to tell VSCode that you want to use the virtual environment. This i
 
 For a Windows machine running PowerShell,
 ```powershell
-venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1
 ```
 
 and on a Mac or Linux-based machine
