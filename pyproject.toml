@@ -34,8 +34,12 @@ target-version = "py312"
 style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/mypy.toml"
 
 [tool.mypy]
+files = ["src"]
 exclude = [
    "(^|/)tests?/",
 ]
 check_untyped_defs = true
 strict = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --doctest-report ndiff"
