@@ -460,7 +460,7 @@ if __name__ == "__main__":
     project0cli()
 ```
 
-The `sys.argv = ["project0", "arg1"]` sets up the CLI argument for `project0cli()`. You can change the input to `compute` function by changing `"CS236"` to something else. For now, just keep it the same, but make a mental note that if you want to modify the input to a file you are debugging, you will need to change that parameter in `debug_project0.py`.
+The `sys.argv = ["project0", "CS236"]` sets up the CLI argument for `project0cli()`. You can change the input to `compute` function by changing `"CS236"` to something else. For now, just keep it the same, but make a mental note that if you want to modify the input to a file you are debugging, you will need to change that parameter in `debug_project0.py`.
 
 Before you can run or debug a program, you need to tell _VS Code_ which version of Python to use. Click on `View` in the menu anc select `Command Palette`. Start typing `Python` and click on `Python:SelectInterpreter`. Choose the one that starts with `.venv` so that it uses the version of Python that is part of your virtual environment.
 
