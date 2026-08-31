@@ -591,7 +591,7 @@ Open the _source control panel_.
 
 1. Open your repo URL in a browser.
 2. Confirm that your latest commit appears.
-3. If CI/tests are enabled, check that your code passed.
+4. Confirm on [classroom50.org](https://classroom50.org/login) that the pass-off tests passed.
 
 ---
 
