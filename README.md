@@ -337,7 +337,7 @@ pip3 install --editable ".[dev]"
 ```
 for most Macs or Linux-based machines.
 
-Note that the quotation marks and brackets in `".[dev"]` are part of the command. Make sure you are in the root directory of your project, and then run this instruction from the command line.
+Note that the quotation marks and brackets in `".[dev]"` are part of the command. Make sure you are in the root directory of your project, and then run this instruction from the command line.
 
 ### 6.2 Run the Code
 From the command line, type
